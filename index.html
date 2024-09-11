@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CANDY LOVE MOLDES </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <style type="text/css">
+			.w3-merriweather {
+			  font-family: "Merriweather", serif;
+			}
+			#loader {
+			  position: absolute;
+			  left: 50%;
+			  top: 50%;
+			  z-index: 1;
+			  width: 120px;
+			  height: 120px;
+			  margin: -76px 0 0 -76px;
+			  border: 16px solid #f3f3f3;
+			  border-radius: 50%;
+			  border-top: 16px solid #000000;
+			  -webkit-animation: spin 2s linear infinite;
+			  animation: spin 2s linear infinite;
+			}
+
+			@-webkit-keyframes spin {
+			  0% { -webkit-transform: rotate(0deg); }
+			  100% { -webkit-transform: rotate(360deg); }
+			}
+			.notSelTxt{
+			  -webkit-user-select: none; /* Safari */
+			  -ms-user-select: none; /* IE 10 and IE 11 */
+			  user-select: none; /* Standard syntax */
+			}
+			@keyframes spin {
+			  0% { transform: rotate(0deg); }
+			  100% { transform: rotate(360deg); }
+			}
+			.bar-search {
+			  outline: none !important;
+			  padding: 7px 7px 9px 7px;
+			  color: #333;
+			  font-size: 16px;
+			  height: 39px;
+			  margin-top: 10px;
+			}
+			.bar-height{
+			  height: 60px;
+			}
+			.bar-logo{
+			  margin-top: 5px;
+			  height: 50px;
+			  width: 50px;
+			}
+			.bar-cart{
+			  padding-top: 20px;
+			  padding-left: 5%;
+			  width:30%;
+			}
+			.bar-neg{
+			  overflow: hidden;
+			  width:300px;
+			   text-overflow: ellipsis;
+			   display: -webkit-box;
+			   -webkit-line-clamp: 2;
+			   -webkit-box-orient: vertical;
+			   line-height: normal;
+			}
+
+			.bar-neg-sub{
+			  display: none;
+			}
+			.cnt-ctr-lar{
+			  margin-top: 100px;
+			}
+			.cnt-ctr-sml{
+
+			    display: none;
+			    background: #FFF;
+			}
+
+			.thbGrd{
+			  max-width: 98%;
+			  max-height: 98%;
+			  font-size: 140px;
+			}
+
+			.inpDraLef{
+			  position: absolute;
+			  margin-top: 10px;
+			  margin-left: 5px;
+			}
+
+			.btnWhts{
+			  padding: 5px;
+			  position:fixed;
+			  width:60px;
+			  height:60px;
+			  bottom:40px;
+			  right:40px;
+			  background-color:#25d366;
+			  color:#FFF;
+			  border-radius:50px;
+			  text-align:center;
+			  font-size:30px;
+			  box-shadow: 2px 2px 3px #999;
+			  z-index:100;
+			}
+			.ctnItm{
+			  min-height: 800px;
+			}
+			.ctnCtgDro{
+			  max-height: 300px;
+			  overflow: auto;
+			  width: 250px;
+			}
+			.ctnSrtDro{
+			  width: 180px;
+			}
+			.fxd{
+			  position: fixed;
+			  top:0;
+			  left:0;
+			  width: 100%;
+			  z-index: 1000;
+			}
+			.mrgItm{
+			  margin-left: 8%;
+			  margin-right: 8%;
+			}
+			.pointer{
+				cursor: pointer;
+			}
+			.btnPag{
+				color: #1A73E8;
+				border: none;
+				background: transparent;
+			}
+			.pagCur{
+				padding-top: 5px;
+				padding-bottom: 5px;
+				padding-left: 12px;
+				padding-right: 12px;
+				background: #0000000C;
+				font-weight: bold;
+			}
+			.spc50{
+				margin-top: 50px;
+			}
+			.inNum{
+			  	width: 90px;
+			  	text-align: center;
+			 }
+
+			@media screen and (max-width: 1200px) {
+			  .bar-cart{
+			    padding-top: 20px;
+			    padding-left: 3%;
+			    width:20%;
+			  }
+			  .mrgItm{
+			    margin-left: 4%;
+			    margin-right: 4%;
+			  }
+			}
+
+			@media screen and (max-width: 760px) {
+			  .bar-neg{
+			    display: none;
+			  }
+			  .bar-cart{
+			    padding-left: 16px;
+			    width:80px;
+			  }
+
+
+			  .bar-neg-sub{
+			    display: block;
+			  }
+			  .content-cat{
+			    display: none;
+			  }
+			  .cnt-ctr-lar{
+			    display: none;
+			  }
+			  .cnt-ctr-sml{
+			    display: block;
+			    background: #FFF;
+			  }
+
+			  .ctnItm{
+			    min-height: 400px;
+			  }
+			  .mrgItm{
+			    margin-left: 2%;
+			    margin-right: 2%;
+			  }
+			  .btnPag{
+				color: #1A73E8;
+				border: none;
+				background: transparent;
+				font-size: 11px;
+			  }
+			  .spc50{
+				margin-top: 25px;
+			  }
+			  .inNum{
+			  	width: 60px;
+			  	text-align: center;
+			  }
+
+			}
+
+		</style>
+
+
+    </head>
+    <body ng-app='app' style="background-color: #ebebeb;" ng-controller='ctrMan' ng-cloack>
+
+        <div id="loader"></div>
+        <div id="ctnMan" style="visibility: hidden;">
+            <div class="w3-row {{clt}} fxd" >
+                <div class="w3-col w3-left w3-container bar-height" style="width:80px">
+                    <img id="lg" src="logo.png" class="w3-round bar-logo" alt="">
+                </div>
+                <div class="w3-col w3-left w3-container bar-height bar-neg">
+                    <h4 id="labNeg"  class="w3-merriweather" style="font-weight: bold; line-height: 22px;margin: 5px 0px; line-height: 25px; visibility: hidden;" ng-model="ngc">{{ngc}}</h4>
+                </div>
+                <div class="w3-col w3-right w3-center bar-height bar-cart" >
+                    <div ng-hide='!crt'>
+                        <i class="fa fa-shopping-cart  w3-xlarge pointer w3-left" ng-click='myCrt()' ></i>
+                        <span id="bdgCrt" class="w3-badge w3-red w3-small w3-left" style="margin-top:-5px;margin-left: 1px;">0</span>
+                    </div>
+
+                </div>
+                <div class="w3-rest bar-height">
+                    <input class="w3-input w3-border w3-round bar-search w3-merriweather" placeholder="{{txtBsc+'...'}}" type="text" maxlength="30" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" ng-model="srch" ng-init="srch=''" ng-Keyup="configPages()">
+                </div>
+            </div>
+            <div class="w3-container w3-merriweather w3-center {{clt}}  bar-neg-sub" style="margin-top:60px;" ng-model="ngc">
+                <h3 ng-hide="ngc.length>15">{{ngc}}</h3><h5 ng-hide="ngc.length<16">{{ngc}}</h5>
+            </div>
+
+
+            <div class="w3-row cnt-ctr-sml w3-merriweather w3-card">
+                <div class="w3-container w3-col s5 w3-center" >
+                    <div onclick="document.getElementById('modCtg').style.display='block'" ng-hide="ctgs.length<2">
+                        <h4 class="notSelTxt" style="color: {{cblu}};">{{txtCtg}}</h4>
+                    </div>
+
+
+
+                </div>
+                <div class="w3-container w3-col s2 w3-center"><h4 style="color: #00000021;">|</h4></div>
+                <div class="w3-container w3-col s5 w3-center" onclick="document.getElementById('modSrt').style.display='block'">
+                    <h4 class="notSelTxt" style="color: {{cblu}};">{{txtSrt}}</h4>
+                </div>
+            </div>
+
+            <div class="w3-container cnt-ctr-lar">
+
+                <div class="w3-left w3-merriweather" style="margin-left:50px;" ng-hide="ctgs.length<2">
+                    {{txtCtg}}
+                    <div class="w3-dropdown-hover w3-merriweather">
+                        <button class="w3-button {{clt}}" style="width:250px">{{txtCtgCrt}}</button>
+                        <div class="w3-dropdown-content w3-bar-block ctnCtgDro {{clt}}" >
+                            <a href="" class="w3-bar-item w3-button" ng-repeat='ctg in ctgs' ng-click='selCtg(ctg)'>{{ctg.n}}</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="w3-right w3-merriweather" style="margin-right:50px;">
+                    {{txtSrt}}
+                    <div class="w3-dropdown-hover w3-merriweather">
+                        <button class="w3-button {{clt}}" style="width:180px">{{txtSrtCrt}}</button>
+                        <div class="w3-dropdown-content w3-bar-block ctnSrtDro {{clt}}">
+                            <a href="" class="w3-bar-item w3-button" ng-click="selSrt(0)">{{txtAlf}}</a>
+                            <a href="" class="w3-bar-item w3-button" ng-click="selSrt(1)">{{txtMyp}}</a>
+                            <a href="" class="w3-bar-item w3-button" ng-click="selSrt(2)">{{txtMnp}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="w3-container spc50" >
+
+                <div ng-init='configPages()'  class="w3-row-padding ctnItm">
+                    <div class="w3-col s12 m6 l4" ng-repeat='itm in itmsCur | orderBy:sort| startFromGrid: currentPage * pageSize | limitTo: pageSize '>
+                        <div class="w3-panel w3-card w3-white mrgItm w3-merriweather">
+                            <div ng-hide="!img"  class="w3-container w3-margin-bottom w3-center" style="height: 260px">
+                                <img ng-hide="{{itm.l=='null'?true:false}}" src="{{itm.l+'.jpg'}}" class="w3-round thbGrd" onload="ajIm(this)">
+                                <i ng-hide="{{itm.l=='null'?false:true}}" class="fa fa-image w3-round thbGrd" style="margin-top:60px;"></i>
+
+                            </div>
+                            <div class="w3-margin-top w3-margin-bottom w3-border-bottom"></div>
+                            <p class="w3-small" style="line-height: 0.7;" ng-hide="cla">{{itm.k}}</p>
+                            <p class="w3-small" style="line-height: 0.7;" ng-hide="uni">{{itm.u}}</p>
+                            <p style="line-height: 1.1; height: 35px;">{{itm.d}}</p>
+
+                            <div class="w3-row w3-center w3-margin-top w3-margin-bottom" style="height:40px;">
+                                <div class="w3-col w3-right" style="width:60px">
+
+                                    <i class="fa fa-cart-plus w3-xxlarge pointer" ng-click='addCrt($event.currentTarget,itm)'  style="color: {{cblu}};" ng-hide='!crt'></i>
+                                </div>
+                                <div class="w3-rest w3-center">
+                                    <label ng-class="{'w3-large':itm.p.length>12,'w3-xlarge':itm.p.length<=12}">{{itm.p}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='btn-group w3-center spc50'>
+                    <button type='button' class='w3-merriweather btnPag pointer' ng-hide='currentPage == 0' ng-click='ntr()'>< {{txtPrv}}</button>
+                    <label class="w3-merriweather w3-large w3-margin-left pagCur">{{currentPage+1}}</label><label class="w3-merriweather w3-large w3-margin-right">{{' / '+ pages.length }}</label>
+                    <button type='button' class='w3-merriweather btnPag pointer' ng-hide='currentPage >= itmsCur.length/pageSize - 1' , ng-click='nxt()'>{{txtNxt}} ></button>
+                </div>
+
+            </div>
+
+            <br><br><br>
+            <footer class="w3-container w3-padding-32 spc50 {{clt}}">
+                <div class="w3-row-padding w3-center">
+                    <div class="{{ txtInf==null||txtInf==''?'':'w3-half' }}" ng-hide="txtTel==null||txtTel==''?true:false">
+                        <div class="w3-container" id="contact">
+                            <h4 class="w3-merriweather">{{ngc}}</h4>
+                            <a href="tel:{{txtTel}}" ><i class="fa fa-phone"></i>{{txtTel}}</a><br>
+                            <a class="w3-margin-top" href="mailto:{{txtCor}}" ng-hide="txtCor==''||txtCor==null?true:false"><i class="fa fa-envelope"></i>{{txtCor}}</a>
+                        </div>
+                    </div>
+
+                    <div class="{{ txtTel==null||txtTel==''?'':'w3-half' }}" ng-hide="txtInf==null||txtInf==''?true:false">
+                        <p id="textInf" ></p>
+                    </div>
+
+
+                </div>
+                <div style="height:90px" ng-hide="!wat"></div>
+            </footer>
+            <a ng-hide="!wat" href="https://api.whatsapp.com/send?phone={{txtTel}}" class="btnWhts" target="_blank">
+                <i class="fa fa-whatsapp w3-xxxlarge"></i>
+            </a>
+
+
+            <div id="modCrt" class="w3-modal" style="padding-top:30px;z-index: 3000;">
+                <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px;overflow: auto; height: 90%;">
+
+                    <div class="w3-center"><br>
+                        <span onclick="document.getElementById('modCrt').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">{{clo}} &times;</span>
+                    </div>
+                    <form class="w3-container w3-margin-top" ng-submit="snd()">
+                        <div class="w3-section">
+                            <div class="w3-padding-small">
+                                <i class="fa fa-user w3-xlarge inpDraLef"></i><input class="w3-input w3-border" style="padding-left: 35px;" placeholder="{{txtPlaNam}}" type="text" ng-model="namc" required>
+                            </div>
+
+                            <input class="w3-button w3-block w3-section w3-padding w3-margin-top w3-merriweather {{clt}}" type="submit" value="{{txtSct}}"  ng-hide="btc">
+                            <div class="w3-center" ng-hide="lod"><i class="fa fa-spinner w3-jumbo w3-spin"></i></div>
+                            <p ng-hide="itmsCrt.itms.length>0?true:false"  class="w3-display-middle">{{txtSin}}</p>
+                            <div class="w3-row w3-border-bottom w3-padding-16" ng-repeat='itm in itmsCrt.itms'>
+                                <div ng-hide="!img"  class="w3-col s3 m2 l2 w3-center">
+                                    <img ng-hide="{{itm.l=='null'?true:false}}" src="{{itm.l+'.jpg'}}" class="w3-round" style="width:90%;">
+
+                                    <i ng-hide="{{itm.l=='null'?false:true}}" class="fa fa-image w3-jumbo w3-round" style="width:90%;"></i>
+
+                                </div>
+                                <div class="w3-col s9 m10 l10">
+                                    <span class="w3-margin-left w3-merriweather" ng-hide="cla">{{itm.k}}</span><br>
+                                    <span class="w3-margin-left w3-merriweather" ng-hide="uni">{{itm.u}}</span><br>
+                                    <span class="w3-margin-left w3-merriweather">{{itm.d}}</span>
+                                    <div class="w3-row">
+                                        <div class="w3-col s2 m5 l5 w3-text-red">
+                                            <i class="fa fa-trash w3-xlarge w3-right" style="margin-top: 5px;" ng-click='delItmCrt(itm)'></i>
+                                        </div>
+                                        <div class="w3-col s10 m7 l7 ">
+                                            <i class="fa fa-plus-circle w3-xlarge w3-margin-right w3-right" ng-click='itm.q=itm.q+1' style="margin-top: 5px;"></i>
+
+                                            <span class="w3-margin-left w3-margin-right w3-xlarge w3-right"><input class="inNum" type="text" ng-model="itm.q" ></span>
+                                            <i class="fa fa-minus-circle w3-xlarge w3-right" ng-click='itm.q=itm.q-1<0?itm.q:itm.q-1' style="margin-top: 5px;"></i>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+
+
+            <div id="modSrt" class="w3-modal" style="z-index: 3000;">
+                <div class="w3-modal-content w3-card-4">
+                    <header class="w3-container {{clt}}">
+                        <span onclick="document.getElementById('modSrt').style.display='none'"
+                                class="w3-button w3-display-topright">&times;</span>
+                        <h2>{{txtSrt}}</h2>
+                    </header>
+                    <div class="w3-container">
+                        <ul class="w3-ul w3-border-bottom">
+                            <li class="w3-container notSelTxt" ng-click="selSrt(0)">{{txtAlf}}</li>
+                            <li class="w3-container notSelTxt" ng-click="selSrt(1)">{{txtMyp}}</li>
+                            <li class="w3-container notSelTxt" ng-click="selSrt(2)">{{txtMnp}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="modCtg" class="w3-modal" style="z-index: 3000;">
+                <div class="w3-modal-content w3-card-4">
+                    <header class="w3-container {{clt}}">
+                        <span onclick="document.getElementById('modCtg').style.display='none'"
+                                class="w3-button w3-display-topright">&times;</span>
+                        <h2>{{txtCtg}}</h2>
+                    </header>
+                    <div class="w3-container" style="overflow: auto; max-height: 320px;">
+                        <ul class="w3-ul w3-monospace" ng-repeat='ctg in ctgs'>
+                            <li class="w3-border-bottom w3-container" ng-click='selCtg(ctg)'>{{ctg.n}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <script type="text/javascript">
+
+			angular.module('app', [])
+			  .controller('ctrMan',
+			    function($scope) {
+			      var modCtg = document.getElementById('modCtg');
+			      var modSrt = document.getElementById('modSrt');
+			      var modCrt = document.getElementById('modCrt');
+			      var bdgCrt = document.getElementById("bdgCrt");
+			      window.onclick = function(event) {
+			        if (event.target == modCtg) {
+			          modCtg.style.display = "none";
+			        }else if(event.target == modSrt){
+			          modSrt.style.display = "none";
+			        }
+			        else if(event.target == modCrt){
+			          modCrt.style.display = "none";
+			        }
+			      }
+			      $scope.currentPage = 0;
+			      $scope.pagSiz = 0;
+			      $scope.pageSize = 6;
+			      $scope.pages = [];
+			      $scope.itms = [];
+			      $scope.itmsCur = [];
+			      $scope.ctgs = [];
+			      $scope.itmsCrt = [];
+			      $scope.txtSrt = '...';
+			      $scope.txtCtg = '...';
+			      $scope.txtAlf = '...';
+			      $scope.txtMay = '...';
+			      $scope.txtMen = '...';
+			      $scope.txtNxt = '...';
+			      $scope.txtPrv = '...';
+			      $scope.txtSrtCrt = $scope.txtAlf;
+			      $scope.sort = 'd';
+			      $scope.ctg = '';
+			      $scope.txtTel='';
+			      $scope.txtCor='';
+			      $scope.txtInf='';
+			      $scope.txtSct='';
+			      $scope.txtPlaNam='';
+			      $scope.txtSct='';
+			      $scope.txtSin='';
+			      $scope.uni = false;
+			      $scope.cla = false;
+			      $scope.wat = false;
+			      $scope.crt = false;
+			      $scope.lod = true;
+			      $scope.btc = false;
+			      $scope.img = true;
+			      $scope.ctok='';
+			      $scope.ernw='';
+			      $scope.clt = 'w3-black';
+			      $scope.cblu = '#1A73E8';
+			      $scope.cgre = '#33AA66';
+			      $scope.clo = 'close';
+
+				  $scope.configPages = function() {
+				  		var q = $scope.srch;
+				  		try{
+				  			q = $scope.srch.replace(" ","");
+				  		}catch(e){
+
+				  		}
+				        if($scope.ctg=='' && q=='' ){
+				            $scope.itmsCur = $scope.itms;
+				        }else{
+
+				        	if(q != ''){
+				        		$scope.txtCtgCrt = $scope.ctgs[0].n;
+				        		$scope.ctg = 0;
+				        		$scope.currentPage = 0;
+				        	}
+				            $scope.itmsCur = [];
+				            try{
+				            	$scope.itms.forEach( function(val, ind, arr) {
+
+					                var ax = q==""?true:(val.d.toUpperCase().search(q.toUpperCase() ) > -1  );
+
+					                if( ($scope.ctg=='' || val.c==$scope.ctg) && ax ){
+					                    $scope.itmsCur.push(val);
+					                }
+					            });
+				            }catch(e){
+
+				            }
+				        }
+				        var intRef = 20;
+				        $scope.pages.length = 0;
+				        var ini = $scope.currentPage - 4;
+				        var fin = $scope.currentPage + 5;
+				        if (ini < 1) {
+				          ini = 1;
+				          fin = Math.ceil($scope.itmsCur.length / $scope.pageSize);
+				        } else {
+				            ini = -1;
+				            fin = Math.ceil($scope.itmsCur.length / $scope.pageSize);
+				        }
+				        if (ini < 1) ini = 1;
+				        for (var i = ini; i <= fin; i++) {
+				          $scope.pages.push({
+				            no: i
+				          });
+				        }
+				        if ($scope.currentPage >= $scope.pages.length)
+				          $scope.currentPage = $scope.pages.length;
+				      };
+
+
+
+			      $scope.setPage = function(index) {
+			        $scope.currentPage = index - 1;
+			      };
+
+			      $scope.nxt = function() {
+			        $scope.currentPage = $scope.currentPage + 1;
+			        topScr();
+			      };
+			      $scope.ntr = function() {
+			      	$scope.currentPage = $scope.currentPage - 1;
+			        topScr();
+			      };
+
+
+			      $scope.addCrt = function(e,itm){
+			        e.setAttribute('class','fa fa-check-circle w3-xxlarge pointer');
+			        e.style.color = $scope.cgre;
+				    addItmCrt(itm);
+				    setTimeout(function () {
+				      e.setAttribute('class','fa fa-cart-plus w3-xxlarge pointer');
+				      e.style.color = $scope.cblu;
+				    }, 600);
+
+
+			      }
+
+			      $scope.myCrt = function(){
+			        modCrt.style.display='block';
+			        $scope.itmsCrt = getStg();
+			      }
+			      $scope.delItmCrt = function(itm){
+			        $scope.itmsCrt = delItmCrt(itm);
+			      }
+			      $scope.selSrt = function(sel){
+			        switch(sel) {
+			          case 0:
+			            $scope.txtSrtCrt = $scope.txtAlf;
+			            $scope.sort = 'd';
+			            break;
+			          case 1:
+			            $scope.txtSrtCrt = $scope.txtMyp;
+			            $scope.sort = '-v';
+			            break;
+			          case 2:
+			            $scope.txtSrtCrt = $scope.txtMnp;
+			            $scope.sort = 'v';
+			            break;
+			        }
+			        modSrt.style.display = "none";
+			      }
+			      $scope.selCtg = function(ctg){
+
+			        $scope.txtCtgCrt = ctg.n;
+			        $scope.ctg = ctg.i==0?'':ctg.i;
+			        modCtg.style.display = "none";
+			        $scope.currentPage = 0;
+			        $scope.srch = '';
+			        $scope.configPages();
+			      }
+			      $scope.srchAll = function(){
+			        console.log("mycart: "+$scope.srch);
+
+			      }
+			      $scope.snd = function(){
+
+			        var text = $scope.txtPlaNam+": "+$scope.namc+"\n\n";
+			        var suc = true;
+
+			        $scope.itmsCrt.itms.forEach( function(v, i, ar) {
+
+			        	if( !(!isNaN(v.q) && !isNaN(parseFloat(v.q) ) ) ){
+			        		suc = false;
+			        		return;
+			        	}
+
+			            text += "*"+v.q+" -> "+v.d+" :"+ v.u+" : "+v.k+"\n";
+			        });
+
+			        if(suc){
+			        	setStg({});
+			            $scope.itmsCrt = [];
+			            bdgCrt.style.visibility = "hidden";
+			            modCrt.style.display = "none";
+
+				        window.open('https://api.whatsapp.com/send?phone='+encodeURIComponent($scope.txtTel)+'&text='+encodeURIComponent(text),'_blank')
+			        }else{
+			        	alert("only numeric values");
+			        }
+
+
+			      }
+			      addItmCrt(null);
+			      var unts = {};
+			      var result = data;
+
+
+			        var ctnMan = document.getElementById("ctnMan");
+			        ctnMan.style.visibility = "visible";
+			        var loader = document.getElementById("loader");
+			        loader.style.visibility = "hidden";
+			        var lg_v = document.getElementById("lg");
+			        var ngc = result.ngc;
+
+
+			        $scope.txtSrt = result.orp;
+			        $scope.txtCtg = result.ctgs;
+			        $scope.txtAlf = result.alf;
+			        $scope.txtMyp = result.myp;
+			        $scope.txtMnp = result.mnp;
+			        $scope.txtBsc = result.bsc;
+			        $scope.txtNxt = result.nxt;
+			      	$scope.txtPrv = result.prv;
+			        $scope.ctok = result.ctok;
+			        $scope.ernw = result.ernw;
+
+			        $scope.txtTel = result.tel2;
+			        $scope.txtCor = result.cor2;
+			        $scope.txtInf = result.dir2;
+
+			        $scope.img = result.img;
+
+			        $scope.uni = !result.uni;
+			        $scope.cla = !result.cla;
+			        $scope.clo = result.clo;
+
+
+			        $scope.wat = result.wha&&result.tel2!='';
+			        $scope.crt = result.crt&&result.tel2!='';
+			        $scope.txtSct = result.sct;
+			        $scope.txtPlaNam = result.nam;
+
+			        $scope.txtSin = result.sin;
+
+			        $scope.txtSct = result.sct;
+			        $scope.txtSrtCrt = $scope.txtAlf;
+
+			        $scope.clt = result.clt;
+			        $scope.ngc = ngc;
+
+
+			        if(result.lg.length>0){
+			          $scope.lg = result.lg;
+			        }else{
+			          lg_v.style.visibility = "hidden";
+			          $scope.lg = "0=="
+			        }
+
+			        result.und.forEach( function(val, ind, arr) {
+			            unts[val.i] = val.n;
+			        });
+
+
+			        $scope.itms = result.itm;
+			        $scope.ctgs = result.ctg;
+			        $scope.txtCtgCrt = $scope.ctgs[0].n;
+
+
+			        $scope.itms.forEach( function(val, ind, arr) {
+			            val.u = unts[val.u];
+
+			        });
+
+
+
+			        var link = document.createElement('link');
+			        link.rel = 'icon';
+			        document.getElementsByTagName('head')[0].appendChild(link);
+			        link.href = 'logo.png';
+			        $scope.currentPage = 1;
+			        $scope.configPages();
+			        topScr();
+					setTimeout(function () {
+				      	var el = document.getElementById('labNeg');
+					   	var divHeight = el.offsetHeight
+					   	var lineHeight = parseInt(el.style.lineHeight);
+					   	var lines = divHeight / lineHeight;
+	    				if( lines < 2){
+	    					el.style.lineHeight = "50px";
+	    				}
+	    				if($scope.ngc.length>25){
+							el.style.fontSize = "16px";
+	    				}
+	    				if($scope.ngc.length>40){
+							el.style.fontSize = "14px";
+	    				}
+	    				el.style.visibility = "visible";
+				    }, 400);
+			    })
+			.filter('startFromGrid', function() {
+			  return function(input, start) {
+			    start = +start;
+			    return input.slice(start);
+			  }
+			});
+			var stgLoc={};
+            function stgChk(){
+                var test = 'test';
+                try {
+                    localStorage.setItem(test, test);
+                    localStorage.removeItem(test);
+                    return true;
+                } catch(e) {
+                    return false;
+                }
+            }
+            function getStg(){
+                if( stgChk() ){
+                  var itmsAux = localStorage.getItem("mn_shop_13x");
+                  return itmsAux==null?{}:JSON.parse(itmsAux);
+                }else{
+                  return stgLoc;
+                }
+            }
+            function setStg(itms){
+                if( stgChk() ){
+                  localStorage.setItem("mn_shop_13x", JSON.stringify(itms) );
+                }else{
+                  stgLoc = itms;
+                }
+            }
+			function addItmCrt(itm){
+			    var itmsCrt = getStg();
+			    if(itmsCrt.itms==undefined){
+			        itmsCrt.itms = [];
+			        if(itm!=null){
+			          itm.q = 1;
+			          itmsCrt.itms.push(itm);
+			        }
+			      }else if(itm!=null){
+			          var aux = null;
+			          for(var i=0;i<itmsCrt.itms.length;i++){
+			            if(itmsCrt.itms[i].i==itm.i){
+			                aux=itmsCrt.itms[i];
+			                break;
+			              }
+			          }
+			          if(aux==null){
+			            itm.q = 1;
+			            itmsCrt.itms.push(itm);
+			          }else{
+			            aux.q +=1;
+			          }
+
+			      }
+			    setStg(itmsCrt);
+			    bdgCrt.innerHTML = itmsCrt.itms.length;
+			    bdgCrt.style.visibility = itmsCrt.itms.length==0? "hidden":"visible";
+
+			}
+			function delItmCrt(itm){
+			    var itmsCrt = getStg();
+			    var ind = -1;
+			    for(var i=0;i<itmsCrt.itms.length;i++){
+			      if(itmsCrt.itms[i].i==itm.i){
+			          ind=i;
+			          break;
+			        }
+			    }
+			    if(ind>-1){
+			      itmsCrt.itms.splice(ind, 1);
+			    }
+			    setStg(itmsCrt);
+			    bdgCrt.innerHTML = itmsCrt.itms.length;
+			    bdgCrt.style.visibility = itmsCrt.itms.length==0? "hidden":"visible";
+			    return itmsCrt;
+			}
+			function topScr() {
+			  document.body.scrollTop = 0;
+			  document.documentElement.scrollTop = 0;
+			}
+			function ajIm(el){
+				el.style.marginTop = ((260-el.offsetHeight)/2)+"px";
+			}
+			var data = /*#d4t4#*/ {"itm":[{"c":19,"d":"BURBUJA ACRILICA 5CM","i":613,"k":"ACS 010","l":"img_613","p":"$2.400,00","u":19,"v":2400,"z":10},{"c":19,"d":"BURBUJA ACRILICA CON HUECO 8CM","i":611,"k":"ACS 004","l":"img_611","p":"$2.700,00","u":19,"v":2700,"z":10},{"c":19,"d":"TOPO SILICONA 5 X 12MM","i":589,"k":"TOPITOS DE SILICONA","l":"img_589","p":"$500,00","u":22,"v":500,"z":10},{"c":18,"d":"CIRTADOR MARIPOSA X8","i":562,"k":"CORTADOR MARIPOSA","l":"img_562","p":"$8.000,00","u":19,"v":8000,"z":10},{"c":18,"d":"COERTADOR COPO DE NIEVE","i":576,"k":"CORTADOR COPO NIEVE","l":"img_576","p":"$7.800,00","u":19,"v":7800,"z":10},{"c":18,"d":"CORTADIR ABC OREJUTA MIKI","i":580,"k":"CORTADOR ABC OREJITAS","l":"img_580","p":"$9.500,00","u":19,"v":9500,"z":10},{"c":18,"d":"CORTADOR BABY SHOWER","i":579,"k":"CORTADOR BABY SHOWER","l":"img_579","p":"$14.500,00","u":19,"v":14500,"z":10},{"c":18,"d":"CORTADOR CIRCULAR DOBLE","i":561,"k":"CORTADOR CIR","l":"img_561","p":"$9.000,00","u":19,"v":9000,"z":10},{"c":18,"d":"CORTADOR CIRCULO DOBLE","i":617,"k":"HRR.020","l":"img_617","p":"$9.000,00","u":21,"v":9000,"z":10},{"c":18,"d":"CORTADOR CUADRADO DOBLE CORTE_","i":559,"k":"CORTADOR CUADRADO","l":"img_559","p":"$8.000,00","u":19,"v":8000,"z":10},{"c":18,"d":"CORTADOR CUPCAKE","i":578,"k":"CORTADOR CUPCAKE","l":"img_578","p":"$12.500,00","u":19,"v":12500,"z":10},{"c":18,"d":"CORTADOR EXP PALOMAS","i":573,"k":"CORTADOR PALOMA","l":"img_573","p":"$7.500,00","u":19,"v":7500,"z":10},{"c":18,"d":"CORTADOR GIRASOL EXP","i":572,"k":"CORTADOR GIRASOL","l":"img_572","p":"$7.800,00","u":19,"v":7800,"z":10},{"c":18,"d":"CORTADOR HOJA DE NAVIDAD","i":575,"k":"CORTADOR HOJA NAVIDAD","l":"img_575","p":"$7.800,00","u":19,"v":7800,"z":10},{"c":18,"d":"CORTADOR HOJA TREBOL","i":574,"k":"CORTADOR HOJA TREVOL","l":"img_574","p":"$7.500,00","u":19,"v":7500,"z":10},{"c":18,"d":"CORTADOR LETRA GRANDE","i":565,"k":"CORTADOR LETRA","l":"img_565","p":"$10.000,00","u":19,"v":10000,"z":10},{"c":18,"d":"CORTADOR MEDALLON","i":577,"k":"CORTADOR MEDALLON","l":"img_577","p":"$12.000,00","u":19,"v":12000,"z":10},{"c":18,"d":"CORTADOR MIOSOTI X 44","i":563,"k":"CORTADOR MIOSOTI","l":"img_563","p":"$9.000,00","u":19,"v":9000,"z":10},{"c":18,"d":"CORTADOR NUMERO GRANDE","i":564,"k":"CORTADOR NUMERO G","l":"img_564","p":"$9.000,00","u":19,"v":9000,"z":10},{"c":18,"d":"CORTADOR OVALADO DOBLE CORTE","i":558,"k":"CORTADOR OVALADO","l":"img_558","p":"$8.000,00","u":19,"v":8000,"z":10},{"c":18,"d":"CORTADOR ROSA  X3","i":560,"k":"CORTADOR ROSA","l":"img_560","p":"$8.500,00","u":19,"v":8500,"z":10},{"c":18,"d":"ESPATULA ALISADORA","i":570,"k":"ESPARULA ALISADORA","l":"img_570","p":"$9.000,00","u":19,"v":9000,"z":10},{"c":18,"d":"ESTILETE  DE 22 PUNTAS","i":618,"k":"HRR 003","l":"img_618","p":"$9.500,00","u":19,"v":9500,"z":10},{"c":18,"d":"EXPULSOR MIOSOTI X4","i":571,"k":"EXPULSOR MIOSOTI","l":"img_571","p":"$7.500,00","u":19,"v":7500,"z":10},{"c":18,"d":"MINI TALADRO MANUAL CON 10 PUNTAS","i":590,"k":"TALADRO MANUAL","l":"img_590","p":"$28.000,00","u":19,"v":28000,"z":10},{"c":18,"d":"RODILLO CORRUGADO","i":569,"k":"RODILLO CORRUGADO","l":"img_569","p":"$8.500,00","u":19,"v":8500,"z":10},{"c":18,"d":"RODILLO ESTRELLAS","i":568,"k":"RODILLO ESTRELLA","l":"img_568","p":"$9.500,00","u":19,"v":9500,"z":10},{"c":18,"d":"RODILLO LADRILLO PEQUEÑO","i":566,"k":"RODILLO LADRILLO P","l":"img_566","p":"$9.500,00","u":19,"v":9500,"z":10},{"c":18,"d":"RODILLO SILICON TRONCO","i":567,"k":"RODILLO SIL MADERA","l":"img_567","p":"$14.000,00","u":19,"v":14000,"z":10},{"c":18,"d":"TEXTURIZADOR DE HOJAS","i":584,"k":"TEXTURIZADOR HOJAS","l":"img_584","p":"$9.800,00","u":19,"v":9800,"z":10},{"c":18,"d":"TEXTURIZADOR DE PIEDRA","i":583,"k":"TEXTURIZADOR PIEDRA","l":"img_583","p":"$9.800,00","u":19,"v":9800,"z":10},{"c":18,"d":"TEXTURIZADOR DE RIMBO DOBLE","i":585,"k":"TEXTURIZADOR ROMBO 2","l":"img_585","p":"$9.800,00","u":19,"v":9800,"z":10},{"c":18,"d":"TIJERA GRANDE ESTAMPADA","i":594,"k":"TUJERAS ESTAMPADA","l":"img_594","p":"$7.500,00","u":19,"v":7500,"z":10},{"c":17,"d":"BANDEJA ORGANUZADORA PASTEL","i":593,"k":"BANDEJA MIKY","l":"img_593","p":"$9.000,00","u":19,"v":9000,"z":10},{"c":17,"d":"BASE SUPER BLANCO","i":550,"k":"SUPER BLANCO","l":"img_550","p":"$3.800,00","u":19,"v":3800,"z":10},{"c":17,"d":"DESMOLDANTE BULLER","i":551,"k":"DESMOLDANTE","l":"img_551","p":"$3.800,00","u":19,"v":3800,"z":10},{"c":17,"d":"PEGANTE BLANCO BULLER","i":549,"k":"PEGANTE BLANCO","l":"img_549","p":"$3.800,00","u":19,"v":3800,"z":10},{"c":17,"d":"PEGANTE PIEDRERIA BALA","i":553,"k":"PEGANTE BALA","l":"img_553","p":"$4.100,00","u":19,"v":4100,"z":10},{"c":17,"d":"PEGANTE PIEDRERIA GOTERO","i":552,"k":"PEGANTE GOTERO","l":"img_552","p":"$5.200,00","u":19,"v":5200,"z":10},{"c":17,"d":"PEGANTE PIEDRERIA GRANDE","i":554,"k":"PEGANTE GRANDE","l":"img_554","p":"$9.900,00","u":19,"v":9900,"z":10},{"c":17,"d":"TONALIZADORES BOREALES","i":555,"k":"TONALIZADORES BR","l":"img_555","p":"$22.500,00","u":19,"v":22500,"z":10},{"c":17,"d":"TONALIZADORES FLUOR","i":556,"k":"TONALIZADORES FL","l":"img_556","p":"$18.000,00","u":19,"v":18000,"z":10},{"c":17,"d":"TONALIZADORES METALIZADOS","i":557,"k":"TONALIZADORES MET","l":"img_557","p":"$26.500,00","u":19,"v":26500,"z":10},{"c":15,"d":"ALA MDF GRANDE","i":374,"k":"ALA MDF G","l":"img_374","p":"$2.900,00","u":19,"v":2900,"z":10},{"c":15,"d":"ALAS MDF MEDIANA 1","i":390,"k":"ALAS MEDIANA","l":"img_390","p":"$1.800,00","u":19,"v":1800,"z":10},{"c":15,"d":"APKIQUE CINTA METRICA MDF","i":422,"k":"APLIQUE CINTA METRICA","l":"img_422","p":"$600,00","u":19,"v":600,"z":10},{"c":15,"d":"APLIQUE ANCLA MDF","i":425,"k":"APLIQUE ANCLA","l":"img_425","p":"$550,00","u":19,"v":550,"z":10},{"c":15,"d":"APLIQUE BASTON NAVIDEÑO","i":435,"k":"APLIQUE BASTON","l":"img_435","p":"$500,00","u":19,"v":500,"z":10},{"c":15,"d":"APLIQUE BIBERON PEQ","i":407,"k":"APLIQUE BIBERON","l":"img_407","p":"$400,00","u":19,"v":400,"z":10},{"c":15,"d":"APLIQUE BICICLETA MDF","i":383,"k":"APLIQUE MDF BICI","l":"img_383","p":"$2.500,00","u":19,"v":2500,"z":10},{"c":15,"d":"APLIQUE BOTON","i":436,"k":"APLIQUE BOTON","l":"img_436","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"APLIQUE BOTON OVEJA","i":408,"k":"APLIQUE OVEJA","l":"img_408","p":"$500,00","u":19,"v":500,"z":10},{"c":15,"d":"APLIQUE BOTON PALOMA","i":437,"k":"APLIQUE PALOMA","l":"img_437","p":"$400,00","u":19,"v":400,"z":10},{"c":15,"d":"APLIQUE CALCETIN","i":423,"k":"APLIQUE CALCETIN","l":"img_423","p":"$450,00","u":19,"v":450,"z":10},{"c":15,"d":"APLIQUE CAMPANA MDF","i":387,"k":"APLIQUE CAMPANA","l":"img_387","p":"$650,00","u":19,"v":650,"z":10},{"c":15,"d":"APLIQUE CARACOLA P","i":433,"k":"APLIQUE CARACOLA","l":"img_433","p":"$4.000,00","u":19,"v":4000,"z":10},{"c":15,"d":"APLIQUE CARRETE HILO","i":419,"k":"APLIQUE CARRETE","l":"img_419","p":"$400,00","u":19,"v":400,"z":10},{"c":15,"d":"APLIQUE CASITA 1","i":416,"k":"APLIQUE CASITA","l":"img_416","p":"$450,00","u":19,"v":450,"z":10},{"c":15,"d":"APLIQUE COCHE P","i":413,"k":"APLIQUE COCHE","l":"img_413","p":"$400,00","u":19,"v":400,"z":10},{"c":15,"d":"APLIQUE CORAZON ARTESANAL 2","i":394,"k":"APLIQUE CORAZON 2","l":"img_394","p":"$600,00","u":19,"v":600,"z":10},{"c":15,"d":"APLIQUE CORAZON HECHO A MANO 1","i":393,"k":"APLIQUE CORAZON 1","l":"img_393","p":"$600,00","u":19,"v":600,"z":10},{"c":15,"d":"APLIQUE CORAZONCITO","i":418,"k":"APLIQUE CORAZONCITO","l":"img_418","p":"$400,00","u":19,"v":400,"z":10},{"c":15,"d":"APLIQUE DEDAL MDF","i":420,"k":"APLIQUE DEDAL","l":"img_420","p":"$450,00","u":19,"v":450,"z":10},{"c":15,"d":"APLIQUE ESFERA NAVIDEÑA","i":432,"k":"APLIQUE ESFERA NAV","l":"img_432","p":"$1.300,00","u":19,"v":1300,"z":10},{"c":15,"d":"APLIQUE FARO GRANDE","i":443,"k":"APLIQUE FAROL G","l":"img_443","p":"$1.800,00","u":19,"v":1800,"z":10},{"c":15,"d":"APLIQUE FLOR 1","i":410,"k":"APLIQUE FLOR","l":"img_410","p":"$380,00","u":19,"v":380,"z":10},{"c":15,"d":"APLIQUE FLOR 2","i":428,"k":"APLIQUE FLOR 2","l":"img_428","p":"$480,00","u":19,"v":480,"z":10},{"c":15,"d":"APLIQUE GANCHO ROPA","i":440,"k":"APLIQUE GANCHO R","l":"img_440","p":"$400,00","u":19,"v":400,"z":10},{"c":15,"d":"APLIQUE GATITO P","i":427,"k":"APLIQUE GATITO","l":"img_427","p":"$500,00","u":19,"v":500,"z":10},{"c":15,"d":"APLIQUE HECHO A MANO 1","i":395,"k":"APLIQUE REDONDO","l":"img_395","p":"$650,00","u":19,"v":650,"z":10},{"c":15,"d":"APLIQUE LLAVE MDF PEQUEÑA","i":391,"k":"APLIQUE LLAVE P","l":"img_391","p":"$600,00","u":19,"v":600,"z":10},{"c":15,"d":"APLIQUE LLAVE MDF REDONDA  PEQUEÑA","i":392,"k":"APLIQUE LLAVE RED P","l":"img_392","p":"$600,00","u":19,"v":600,"z":10},{"c":15,"d":"APLIQUE LOVE MDF","i":399,"k":"APLIQUE LOVE","l":"img_399","p":"$680,00","u":19,"v":680,"z":10},{"c":15,"d":"APLIQUE MAMILA PQ","i":409,"k":"APLIQUE MAMILA","l":"img_409","p":"$400,00","u":19,"v":400,"z":10},{"c":15,"d":"APLIQUE MANIQUI PEQUEÑO","i":429,"k":"APLIQUE MANIQUI P","l":"img_429","p":"$450,00","u":19,"v":450,"z":10},{"c":15,"d":"APLIQUE MAQUINA 2 MDF QUULTS","i":397,"k":"APLIQUE MAQUINA 2","l":"img_397","p":"$680,00","u":19,"v":680,"z":10},{"c":15,"d":"APLIQUE MARINO OSTRA 1","i":411,"k":"APLIQUE MARINO 1","l":"img_411","p":"$500,00","u":19,"v":500,"z":10},{"c":15,"d":"APLIQUE MDF COPO 1","i":388,"k":"APLIQUE COPO 1","l":"img_388","p":"$600,00","u":19,"v":600,"z":10},{"c":15,"d":"APLIQUE MDF COPO 2","i":389,"k":"APLIQUE COPO 2","l":"img_389","p":"$600,00","u":19,"v":600,"z":10},{"c":15,"d":"APLIQUE MDF GANCHO","i":400,"k":"APLIQUE GANCHO","l":"img_400","p":"$800,00","u":19,"v":800,"z":10},{"c":15,"d":"APLIQUE MDF JAULA","i":386,"k":"APLIQUE JAULA","l":"img_386","p":"$1.800,00","u":19,"v":1800,"z":10},{"c":15,"d":"APLIQUE MDF LLEVE CORAZON  GRANDE","i":384,"k":"APLIQUE LLAVE COR G","l":"img_384","p":"$850,00","u":19,"v":850,"z":10},{"c":15,"d":"APLIQUE MDF LLEVE REDONDA 2","i":385,"k":"APLIQUE LLAVE RED 2","l":"img_385","p":"$850,00","u":19,"v":850,"z":10},{"c":15,"d":"APLIQUE MDF MAQUINA HEC MANO","i":398,"k":"APLIQUE MAQUINA 3","l":"img_398","p":"$680,00","u":19,"v":680,"z":10},{"c":15,"d":"APLIQUE MDF MAQUINA PAJARITO","i":396,"k":"APLIQUE MAQUINA 1","l":"img_396","p":"$680,00","u":19,"v":680,"z":10},{"c":15,"d":"APLIQUE NAVIDEÑA MEDIANA","i":430,"k":"APLIQUE ESTRELLA NAV","l":"img_430","p":"$1.300,00","u":19,"v":1300,"z":10},{"c":15,"d":"APLIQUE NAVIDEÑO PAPA NOEL","i":405,"k":"APLIQUE PAPA NOEL","l":"img_405","p":"$750,00","u":19,"v":750,"z":10},{"c":15,"d":"APLIQUE OSITO","i":424,"k":"APLIQUE OSITO","l":"img_424","p":"$400,00","u":19,"v":400,"z":10},{"c":15,"d":"APLIQUE PATO P","i":412,"k":"APLIQUE PATO","l":"img_412","p":"$400,00","u":19,"v":400,"z":10},{"c":15,"d":"APLIQUE PIECITO","i":417,"k":"APLIQUE PIE","l":"img_417","p":"$550,00","u":19,"v":550,"z":10},{"c":15,"d":"APLIQUE PINO PEQUEÑO","i":401,"k":"APLIQUE PINO P","l":"img_401","p":"$350,00","u":19,"v":350,"z":10},{"c":15,"d":"APLIQUE PLANCHA PEQUEÑA","i":426,"k":"APLIQUE PLANCHA P","l":"img_426","p":"$500,00","u":19,"v":500,"z":10},{"c":15,"d":"APLIQUE REGALO MDF","i":421,"k":"APLIQUE REGALO","l":"img_421","p":"$400,00","u":19,"v":400,"z":10},{"c":15,"d":"APLIQUE RENITO MDF","i":439,"k":"APLIQUE RENITO","l":"img_439","p":"$500,00","u":19,"v":500,"z":10},{"c":15,"d":"APLIQUE TARRO HILOS","i":415,"k":"APLIQUE TARRO","l":"img_415","p":"$550,00","u":19,"v":550,"z":10},{"c":15,"d":"APLIQUE TIJERA PQ","i":441,"k":"APLIQUE TIJERAS","l":"img_441","p":"$700,00","u":19,"v":700,"z":10},{"c":15,"d":"APLIQUE TIMON","i":406,"k":"APLIQUE TIMON","l":"img_406","p":"$500,00","u":19,"v":500,"z":10},{"c":15,"d":"APLIQUE TORRE IFEL","i":442,"k":"APLIQUE TRR IFEL","l":"img_442","p":"$2.000,00","u":19,"v":2000,"z":10},{"c":15,"d":"APLIQUE VAQUITA MDF","i":438,"k":"APLIQUE VAQUITA","l":"img_438","p":"$600,00","u":19,"v":600,"z":10},{"c":15,"d":"APLIQUE VELA NAVIDEÑA","i":414,"k":"APLIQUE VELA","l":"img_414","p":"$500,00","u":19,"v":500,"z":10},{"c":15,"d":"APLIQUE ZAPATICO BEBE","i":404,"k":"APLIQUE ZAPATICO","l":"img_404","p":"$400,00","u":19,"v":400,"z":10},{"c":15,"d":"APLIQUE ZAPATILLA SENCILLA 1","i":403,"k":"APLIQUE ZAPATILLA 1","l":"img_403","p":"$700,00","u":19,"v":700,"z":10},{"c":15,"d":"APLIQUE ZAPATILLA VIBTAGE","i":434,"k":"APLIQUE ZAPATILLA 2","l":"img_434","p":"$1.900,00","u":19,"v":1900,"z":10},{"c":15,"d":"BASE CORAZON OVALADA CORAZON","i":366,"k":"BASE MDF CORAZON","l":"img_366","p":"$4.500,00","u":19,"v":4500,"z":10},{"c":15,"d":"BASE MADERA FLOR","i":375,"k":"BASE FLOR MADERA","l":"img_375","p":"$7.000,00","u":19,"v":7000,"z":10},{"c":15,"d":"BASE MDF CUADRADA G","i":342,"k":"BASE MDF C3","l":"img_342","p":"$3.800,00","u":19,"v":3800,"z":10},{"c":15,"d":"BASE MDF CUADRADA M","i":343,"k":"BASE MDF C2","l":"img_343","p":"$2.950,00","u":19,"v":2950,"z":10},{"c":15,"d":"BASE MDF CUADRADA P","i":341,"k":"BASE MDF C1","l":"img_341","p":"$1.500,00","u":19,"v":1500,"z":10},{"c":15,"d":"BASE MDF REDO DA FLORAL 3","i":349,"k":"BASE MDF CIRCU FLOR 3","l":"img_349","p":"$3.800,00","u":19,"v":3800,"z":10},{"c":15,"d":"BASE MDF REDONDA  MANDALA 1","i":353,"k":"BASE MDF RED MAND 1","l":"img_353","p":"$1.500,00","u":19,"v":1500,"z":10},{"c":15,"d":"BASE MDF REDONDA  MANDALA G","i":355,"k":"BASE MDF RED MANDALA 3","l":"img_355","p":"$3.800,00","u":19,"v":3800,"z":10},{"c":15,"d":"BASE MDF REDONDA  RUEDA M","i":351,"k":"BASE MDF RED RUEDA 2","l":"img_351","p":"$2.950,00","u":19,"v":2950,"z":10},{"c":15,"d":"BASE MDF REDONDA  RUEDA P__","i":350,"k":"BASE MDF RED RUEDA 1","l":"img_350","p":"$1.500,00","u":19,"v":1500,"z":10},{"c":15,"d":"BASE MDF REDONDA FLORAL M","i":348,"k":"BASE MDF RED FLOR 2","l":"img_348","p":"$2.950,00","u":19,"v":2950,"z":10},{"c":15,"d":"BASE MDF REDONDA FLORAL P_","i":347,"k":"BASE MDF RED FLOR 1_","l":"img_347","p":"$1.500,00","u":19,"v":1500,"z":10},{"c":15,"d":"BASE MDF REDONDA G","i":344,"k":"BASE MDF RED  3","l":"img_344","p":"$3.800,00","u":19,"v":3800,"z":10},{"c":15,"d":"BASE MDF REDONDA M","i":345,"k":"BASE MDF RED 2","l":"img_345","p":"$2.950,00","u":19,"v":2950,"z":10},{"c":15,"d":"BASE MDF REDONDA MANDALA M","i":354,"k":"BASE MDF RED MANDALA 2","l":"img_354","p":"$2.950,00","u":19,"v":2950,"z":10},{"c":15,"d":"BASE MDF REDONDA P","i":346,"k":"BASE MDF RED 1","l":"img_346","p":"$1.500,00","u":19,"v":1500,"z":10},{"c":15,"d":"BASE MDF REDONDA RUEDA G","i":352,"k":"BASE MDF RED  RUEDA 3","l":"img_352","p":"$3.800,00","u":19,"v":3800,"z":10},{"c":15,"d":"BASE RECTANGULAE CALADA","i":367,"k":"BASE RECTANGULAR","l":"img_367","p":"$7.000,00","u":19,"v":7000,"z":10},{"c":15,"d":"BASE REDODNDA LISA DE MADERA","i":376,"k":"BASE RED MADERA","l":"img_376","p":"$7.700,00","u":19,"v":7700,"z":10},{"c":15,"d":"BASE SIN FONDO CORONA 1","i":369,"k":"BASE MDF CORONA","l":"img_369","p":"$4.000,00","u":19,"v":4000,"z":10},{"c":15,"d":"BASE SIN FONDO PUNTA CORAZON","i":370,"k":"BASE MDF CIC COR","l":"img_370","p":"$4.000,00","u":19,"v":4000,"z":10},{"c":15,"d":"BASE SIN FONDO PUNTA CORAZON 2","i":371,"k":"BASE MDF CIC COR 2","l":"img_371","p":"$4.000,00","u":19,"v":4000,"z":10},{"c":15,"d":"BASE SIN FONDO RECT CON PUNTA","i":372,"k":"BASE MDF RECTANGULO","l":"img_372","p":"$4.000,00","u":19,"v":4000,"z":10},{"c":15,"d":"BASE SIN FONDO RECTANGULO REDONDO","i":373,"k":"BASE MDF REC RED","l":"img_373","p":"$4.000,00","u":19,"v":4000,"z":10},{"c":15,"d":"BOTON ESTRELLA 1","i":402,"k":"BOTON ESTRELLA","l":"img_402","p":"$400,00","u":19,"v":400,"z":10},{"c":15,"d":"CAMAFEO MDF 1","i":377,"k":"CAMAFEO 1","l":"img_377","p":"$2.000,00","u":19,"v":2000,"z":10},{"c":15,"d":"COLGA PUERTA MDF","i":368,"k":"COLGA PUETA","l":"img_368","p":"$2.200,00","u":19,"v":2200,"z":10},{"c":15,"d":"CORAZON MDF CANASTA MEDIANO","i":357,"k":"CORAZON CANASTA 2","l":"img_357","p":"$3.000,00","u":19,"v":3000,"z":10},{"c":15,"d":"CORAZON MDF CANASTA PEQUEÑO","i":356,"k":"CORAZON CANASTA 1","l":"img_356","p":"$1.800,00","u":19,"v":1800,"z":10},{"c":15,"d":"CORAZON MDF ENREDADERA MEDIANO","i":361,"k":"CORAZON ENREDADERA 2","l":"img_361","p":"$3.000,00","u":19,"v":3000,"z":10},{"c":15,"d":"CORAZON MDF ENREDADERA PEQUEÑO","i":360,"k":"CORAZON ENREDADERA 1","l":"img_360","p":"$1.800,00","u":19,"v":1800,"z":10},{"c":15,"d":"CORAZON MDF FLOR MEDIANO_","i":365,"k":"CORAZON  FLOR  2_","l":"img_365","p":"$3.000,00","u":19,"v":3000,"z":10},{"c":15,"d":"CORAZON MDF FLOR PEQUEÑO_","i":364,"k":"CORAZON FLOR 1_","l":"img_364","p":"$1.800,00","u":19,"v":1800,"z":10},{"c":15,"d":"CORAZON MDF PAJARITO MEDIANO_","i":363,"k":"CORAZON PAJARITO 2_","l":"img_363","p":"$3.000,00","u":19,"v":3000,"z":10},{"c":15,"d":"CORAZON MDF PAJARITO PEQUEÑO_","i":362,"k":"CORAZON PAJARITO 1_","l":"img_362","p":"$1.800,00","u":19,"v":1800,"z":10},{"c":15,"d":"CORAZON MDF VITRAL MEDIANO","i":359,"k":"CORAZON VITRAL 2","l":"img_359","p":"$3.000,00","u":19,"v":3000,"z":10},{"c":15,"d":"CORAZON MDF VITRAL PEQUEÑO","i":358,"k":"CORAZON VITRAL 1","l":"img_358","p":"$1.800,00","u":19,"v":1800,"z":10},{"c":15,"d":"LETRA   CLASICA MDF 8 ____________","i":524,"k":"ABC CLAS 8____________","l":"img_524","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF A_","i":498,"k":"ABC CLAS A_","l":"img_498","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF B__","i":499,"k":"ABC CLAS B__","l":"img_499","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF C___","i":500,"k":"ABC CLAS C___","l":"img_500","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF D____","i":501,"k":"ABC CLAS D____","l":"img_501","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF E_____","i":502,"k":"ABC CLAS E_____","l":"img_502","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF F______","i":503,"k":"ABC CLAS F______","l":"img_503","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF G_______","i":504,"k":"ABC CLAS G_______","l":"img_504","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF H________","i":505,"k":"ABC CLAS H________","l":"img_505","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF I________","i":506,"k":"ABC CLAS I________","l":"img_506","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF J_________","i":507,"k":"ABC CLAS J_________","l":"img_507","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF K_________","i":508,"k":"ABC CLAS K_________","l":"img_508","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF L__________","i":509,"k":"ABC CLAS L__________","l":"img_509","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF M_________","i":510,"k":"ABC CLAS M_________","l":"img_510","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF N________","i":511,"k":"ABC CLAS N________","l":"img_511","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF O________","i":512,"k":"ABC CLAS O________","l":"img_512","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF P__________","i":513,"k":"ABC CLAS P__________","l":"img_513","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF Q_________","i":514,"k":"ABC CLAS Q_________","l":"img_514","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF R___________","i":515,"k":"ABC CLAS R___________","l":"img_515","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF S___________","i":516,"k":"ABC CLAS S___________","l":"img_516","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF T___________","i":517,"k":"ABC CLAS T___________","l":"img_517","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF U___________","i":518,"k":"ABC CLAS U___________","l":"img_518","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF V___________","i":519,"k":"ABC CLAS V___________","l":"img_519","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF W___________","i":521,"k":"ABC CLAS W___________","l":"img_521","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF X_________","i":520,"k":"ABC CLAS X_________","l":"img_520","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF Y____________","i":522,"k":"ABC CLAS Y____________","l":"img_522","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   CLASICA MDF Z____________","i":523,"k":"ABC CLAS Z____________","l":"img_523","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   U MDF__________","i":464,"k":"ABC LOVE U","l":"img_464","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   UNION MDF__________","i":470,"k":"ABC LOVE  UNION","l":"img_470","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA   X MDF___________","i":467,"k":"ABC LOVE X","l":"img_467","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA  A MDF","i":444,"k":"ABC LOVE A","l":"img_444","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA  B MDF_","i":445,"k":"ABC LOVE B","l":"img_445","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA  C MDF__","i":446,"k":"ABC LOVE C","l":"img_446","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA  D MDF__","i":447,"k":"ABC LOVE D","l":"img_447","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA  E MDF___","i":448,"k":"ABC LOVE E","l":"img_448","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA  F MDF____","i":449,"k":"ABC LOVE F","l":"img_449","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA  G MDF_____","i":450,"k":"ABC LOVE G","l":"img_450","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA  H MDF______","i":451,"k":"ABC LOVE H","l":"img_451","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA  I MDF______","i":452,"k":"ABC LOVE I","l":"img_452","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA  J MDF_______","i":453,"k":"ABC LOVE J","l":"img_453","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA  K MDF________","i":454,"k":"ABC LOVE K","l":"img_454","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA  L MDF________","i":456,"k":"ABC LOVE L","l":"img_456","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA  M MDF_________","i":455,"k":"ABC LOVE M","l":"img_455","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA  N MDF__________","i":457,"k":"ABC LOVE N","l":"img_457","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA  O MDF___________","i":458,"k":"ABC LOVE O","l":"img_458","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA  P MDF____________","i":459,"k":"ABC LOVE P","l":"img_459","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA  Q MDF_____________","i":460,"k":"ABC LOVE Q","l":"img_460","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA  R MDF_____________","i":461,"k":"ABC LOVE R","l":"img_461","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA  S MDF_________","i":462,"k":"ABC LOVE S","l":"img_462","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA  T MDF__________","i":463,"k":"ABC LOVE T","l":"img_463","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA  V MDF__________","i":465,"k":"ABC LOVE V_","l":"img_465","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA  W MDF___________","i":466,"k":"ABC LOVE W__","l":"img_466","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA  Y MDF___________","i":468,"k":"ABC LOVE Y_","l":"img_468","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA  Z MDF___________","i":469,"k":"ABC LOVE Z","l":"img_469","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  0 MDF_________","i":486,"k":"ABC  CANDY O________","l":"img_486","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  A MDF_","i":471,"k":"ABC  CANDY A_","l":"img_471","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  B MDF__","i":472,"k":"ABC  CANDY B__","l":"img_472","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  C MDF___","i":473,"k":"ABC  CANDY C___","l":"img_473","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  D MDF___","i":474,"k":"ABC  CANDY D___","l":"img_474","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  F MDF____","i":476,"k":"ABC  CANDY F____","l":"img_476","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  G MDF_____","i":477,"k":"ABC  CANDY G_____","l":"img_477","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  H MDF______","i":478,"k":"ABC  CANDY H______","l":"img_478","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  I MDF_______","i":479,"k":"ABC  CANDY I_______","l":"img_479","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  J MDF_______","i":480,"k":"ABC  CANDY J_______","l":"img_480","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  K MDF_______","i":481,"k":"ABC  CANDY K_______","l":"img_481","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  L MDF________","i":482,"k":"ABC  CANDY L________","l":"img_482","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  M MDF_______","i":483,"k":"ABC  CANDY M ______","l":"img_483","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  N MDF________","i":484,"k":"ABC  CANDY N _______","l":"img_484","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  N- MDF_________","i":485,"k":"ABC  CANDY N-________","l":"img_485","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  P MDF________","i":487,"k":"ABC  CANDY P _______","l":"img_487","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  Q MDF__________","i":488,"k":"ABC  CANDY Q_________","l":"img_488","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  R MDF_________","i":489,"k":"ABC  CANDY R ________","l":"img_489","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  S MDF_________","i":490,"k":"ABC  CANDY S ________","l":"img_490","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  T MDF_________","i":491,"k":"ABC  CANDY T ________","l":"img_491","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  U MDF__________","i":492,"k":"ABC  CANDY U _________","l":"img_492","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  V MDF__________","i":493,"k":"ABC  CANDY V _________","l":"img_493","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  W MDF__________","i":494,"k":"ABC  CANDY W _________","l":"img_494","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  X MDF__________","i":495,"k":"ABC  CANDY X _________","l":"img_495","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  Y MDF___________","i":496,"k":"ABC  CANDY Y__________","l":"img_496","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY  Z MDF____________","i":497,"k":"ABC  CANDY Z___________","l":"img_497","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"LETRA CANDY E MDF____","i":475,"k":"ABC  CANDY E____","l":"img_475","p":"$250,00","u":19,"v":250,"z":10},{"c":15,"d":"MARCO CAMAFEO CARACOL 5","i":381,"k":"CAMAFEO 5","l":"img_381","p":"$2.500,00","u":19,"v":2500,"z":10},{"c":15,"d":"MARCO CAMAFEO HOJILLA 6","i":382,"k":"CAMAFEO 6","l":"img_382","p":"$2.500,00","u":19,"v":2500,"z":10},{"c":15,"d":"MARCO CAMAFEO PUNTA 2","i":378,"k":"CAMAFEO 2","l":"img_378","p":"$2.500,00","u":19,"v":2500,"z":10},{"c":15,"d":"MARCO CAMAFEO RECTANGULAR 4","i":380,"k":"CAMAFEO 4","l":"img_380","p":"$2.500,00","u":19,"v":2500,"z":10},{"c":15,"d":"MARCO CAMAFEO REDONDO 3","i":379,"k":"CAMAFEO 3","l":"img_379","p":"$2.500,00","u":19,"v":2500,"z":10},{"c":15,"d":"PINO MDF NACIMIENTO","i":620,"k":"PINO MDF NACIMIENTO","l":"img_620","p":"$8.500,00","u":0,"v":8500,"z":10},{"c":15,"d":"QPLIQUE PINO NAVIDEÑO 2","i":431,"k":"APLIQUE PINO NAV 2","l":"img_431","p":"$1.300,00","u":19,"v":1300,"z":10},{"c":7,"d":"ACESORIO OSITO CARIÑOSO","i":157,"k":"141","l":"img_157","p":"$13.000,00","u":19,"v":13000,"z":10},{"c":7,"d":"ANIMALITO BOSQUE PEQ","i":148,"k":"237","l":"img_148","p":"$17.500,00","u":19,"v":17500,"z":10},{"c":7,"d":"BUHITA","i":120,"k":"233","l":"img_120","p":"$17.000,00","u":19,"v":17000,"z":10},{"c":7,"d":"BUHO BABY","i":117,"k":"131","l":"img_117","p":"$14.000,00","u":19,"v":14000,"z":10},{"c":7,"d":"BUHO RAMA","i":116,"k":"130","l":"img_116","p":"$15.000,00","u":19,"v":15000,"z":10},{"c":7,"d":"COMPLEMENTO MIXTO","i":159,"k":"143","l":"img_159","p":"$19.000,00","u":19,"v":19000,"z":10},{"c":7,"d":"CONEJITA MIMI","i":95,"k":"124","l":"img_95","p":"$11.300,00","u":19,"v":11300,"z":10},{"c":7,"d":"CONEJO TIERNO GRANDE","i":201,"k":"516","l":"img_201","p":"$36.000,00","u":19,"v":36000,"z":10},{"c":7,"d":"ESTRELLA GRANDE","i":100,"k":"223","l":"img_100","p":"$14.900,00","u":19,"v":14900,"z":10},{"c":7,"d":"ESTRELLA MEDIANA","i":96,"k":"125","l":"img_96","p":"$12.300,00","u":19,"v":12300,"z":10},{"c":7,"d":"FLAMENCO MEDIANO","i":36,"k":"209","l":"img_36","p":"$15.000,00","u":19,"v":15000,"z":10},{"c":7,"d":"FLAMENCO PEQUEÑO","i":29,"k":"106","l":"img_29","p":"$11.500,00","u":19,"v":11500,"z":10},{"c":7,"d":"KIT AVES","i":123,"k":"321","l":"img_123","p":"$20.000,00","u":19,"v":20000,"z":10},{"c":7,"d":"KIT CABALITOS DE MAR","i":110,"k":"413","l":"img_110","p":"$28.700,00","u":19,"v":28700,"z":10},{"c":7,"d":"KIT CALAMAR","i":101,"k":"224","l":"img_101","p":"$18.500,00","u":19,"v":18500,"z":10},{"c":7,"d":"KIT CANGREJO","i":111,"k":"510","l":"img_111","p":"$27.700,00","u":19,"v":27700,"z":10},{"c":7,"d":"KIT CONEJO","i":39,"k":"212","l":"img_39","p":"$17.900,00","u":19,"v":17900,"z":10},{"c":7,"d":"KIT DELFINES","i":108,"k":"318","l":"img_108","p":"$23.200,00","u":19,"v":23200,"z":10},{"c":7,"d":"KIT GATOS","i":160,"k":"239","l":"img_160","p":"$19.000,00","u":19,"v":19000,"z":10},{"c":7,"d":"KIT LANGOSTA","i":107,"k":"317","l":"img_107","p":"$21.500,00","u":19,"v":21500,"z":10},{"c":7,"d":"KIT MEDUZAS","i":106,"k":"230","l":"img_106","p":"$18.700,00","u":19,"v":18700,"z":10},{"c":7,"d":"KIT MIXTO","i":43,"k":"309","l":"img_43","p":"$23.000,00","u":19,"v":23000,"z":10},{"c":7,"d":"KIT OREJAS CONEJO","i":125,"k":"323","l":"img_125","p":"$19.500,00","u":19,"v":19500,"z":10},{"c":7,"d":"KIT OSO SURTIDO","i":79,"k":"411","l":"img_79","p":"$22.000,00","u":19,"v":22000,"z":10},{"c":7,"d":"KIT PECES","i":109,"k":"319","l":"img_109","p":"$22.000,00","u":19,"v":22000,"z":10},{"c":7,"d":"KIT TORTUGA","i":112,"k":"511","l":"img_112","p":"$33.000,00","u":19,"v":33000,"z":10},{"c":7,"d":"MOLDE ANIMALES NACIMIENTO CLASICO","i":311,"k":"N026","l":"img_311","p":"$42.000,00","u":19,"v":42000,"z":10},{"c":7,"d":"MOLDE ANIMALES NACIMIENTO GRANDE","i":309,"k":"N024","l":"img_309","p":"$37.000,00","u":19,"v":37000,"z":10},{"c":7,"d":"MOLDE ANIMALES NACIMIENTO MEDIANO","i":306,"k":"N004","l":"img_306","p":"$34.000,00","u":19,"v":34000,"z":10},{"c":7,"d":"MOLDE ANIMALIOS PET","i":297,"k":"329","l":"img_297","p":"$26.800,00","u":19,"v":26800,"z":10},{"c":7,"d":"MOLDE ANIMALITO BARRIGUITA","i":162,"k":"330","l":"img_162","p":"$25.000,00","u":19,"v":25000,"z":10},{"c":7,"d":"MOLDE ANIMALITO MARINOS PEQUEÑO","i":328,"k":"263","l":"img_328","p":"$23.000,00","u":19,"v":23000,"z":10},{"c":7,"d":"MOLDE ANIMALITOS PANZONES","i":338,"k":"351","l":"img_338","p":"$33.000,00","u":19,"v":33000,"z":10},{"c":7,"d":"MOLDE BICHOS COMPLETO","i":332,"k":"352","l":"img_332","p":"$18.900,00","u":19,"v":18900,"z":10},{"c":7,"d":"MOLDE CARRITO ZANAHORIA","i":235,"k":"339","l":"img_235","p":"$20.800,00","u":19,"v":20800,"z":10},{"c":7,"d":"MOLDE GATITA","i":224,"k":"246","l":"img_224","p":"$18.000,00","u":19,"v":18000,"z":10},{"c":7,"d":"MOLDE JHOANITAS * 3","i":208,"k":"163","l":"img_208","p":"$18.000,00","u":19,"v":18000,"z":10},{"c":7,"d":"MOLDE KIT ANIMALITO MIXTOS","i":25,"k":"604","l":"img_25","p":"$41.900,00","u":19,"v":41900,"z":10},{"c":7,"d":"MOLDE KIT JARDIN BICHOS","i":26,"k":"701","l":"img_26","p":"$38.500,00","u":19,"v":38500,"z":10},{"c":7,"d":"MOLDE KIT PAJARITO *3","i":222,"k":"243","l":"img_222","p":"$15.000,00","u":19,"v":15000,"z":10},{"c":7,"d":"MOLDE LIBELULA","i":218,"k":"150","l":"img_218","p":"$11.000,00","u":19,"v":11000,"z":10},{"c":7,"d":"MOLDE LLAMA","i":271,"k":"254","l":"img_271","p":"$21.600,00","u":19,"v":21600,"z":10},{"c":7,"d":"MOLDE MARINOS GRANDES","i":329,"k":"362","l":"img_329","p":"$36.000,00","u":19,"v":36000,"z":10},{"c":7,"d":"MOLDE MASCOTICAS","i":599,"k":"265","l":"img_599","p":"$24.500,00","u":19,"v":24500,"z":10},{"c":7,"d":"MOLDE OVEJAS","i":325,"k":"N094","l":"img_325","p":"$42.500,00","u":19,"v":42500,"z":10},{"c":7,"d":"MOLDE PONY","i":294,"k":"151","l":"img_294","p":"$19.500,00","u":19,"v":19500,"z":10},{"c":7,"d":"MOLDE TACITA OSITO","i":331,"k":"262","l":"img_331","p":"$18.000,00","u":19,"v":18000,"z":10},{"c":7,"d":"MOLDE TRIO CONEJITOS","i":233,"k":"247","l":"img_233","p":"$15.800,00","u":19,"v":15800,"z":10},{"c":7,"d":"MOLDE UNIVERSAL BICHOS","i":23,"k":"602","l":"img_23","p":"$33.000,00","u":19,"v":33000,"z":10},{"c":7,"d":"MOLDE YOMI","i":191,"k":"146","l":"img_191","p":"$14.800,00","u":19,"v":14800,"z":10},{"c":7,"d":"OSITO","i":42,"k":"308","l":"img_42","p":"$21.000,00","u":19,"v":21000,"z":10},{"c":7,"d":"OSO GOLOSO GRANDE","i":186,"k":"612","l":"img_186","p":"$43.800,00","u":19,"v":43800,"z":10},{"c":7,"d":"OSOS GRANDE","i":78,"k":"410","l":"img_78","p":"$24.000,00","u":19,"v":24000,"z":10},{"c":7,"d":"OSTRA GRANDE","i":102,"k":"225","l":"img_102","p":"$15.800,00","u":19,"v":15800,"z":10},{"c":7,"d":"OSTRA MEDIANA","i":93,"k":"122","l":"img_93","p":"$10.900,00","u":19,"v":10900,"z":10},{"c":7,"d":"PALOMAS","i":59,"k":"114","l":"img_59","p":"$10.800,00","u":19,"v":10800,"z":10},{"c":7,"d":"SENTADITO MULTI USO","i":184,"k":"611","l":"img_184","p":"$42.900,00","u":19,"v":42900,"z":10},{"c":7,"d":"TACIATA DE TE","i":164,"k":"512","l":"img_164","p":"$30.700,00","u":19,"v":30700,"z":10},{"c":7,"d":"TROMPAS CONEJO","i":124,"k":"322","l":"img_124","p":"$20.700,00","u":19,"v":20700,"z":10},{"c":7,"d":"UNICORNIO MEDIANO","i":35,"k":"207","l":"img_35","p":"$17.200,00","u":19,"v":17200,"z":10},{"c":7,"d":"UNICORNIO PEQUEÑO","i":30,"k":"107","l":"img_30","p":"$12.700,00","u":19,"v":12700,"z":10},{"c":10,"d":"APLIQUE SURTIDO 4","i":192,"k":"147","l":"img_192","p":"$18.000,00","u":19,"v":18000,"z":10},{"c":10,"d":"APLIQUES 3","i":156,"k":"140","l":"img_156","p":"$15.200,00","u":19,"v":15200,"z":10},{"c":10,"d":"APLIQUES ANIMALES","i":65,"k":"120","l":"img_65","p":"$13.200,00","u":19,"v":13200,"z":10},{"c":10,"d":"APLIQUES CORAZONES","i":60,"k":"115","l":"img_60","p":"$12.700,00","u":19,"v":12700,"z":10},{"c":10,"d":"APLIQUES FLORES 2","i":158,"k":"142","l":"img_158","p":"$15.800,00","u":19,"v":15800,"z":10},{"c":10,"d":"APLIQUES UNICORNIO","i":63,"k":"118","l":"img_63","p":"$13.000,00","u":19,"v":13000,"z":10},{"c":10,"d":"GRAGEAS","i":62,"k":"117","l":"img_62","p":"$11.700,00","u":19,"v":11700,"z":10},{"c":10,"d":"KIT APLIQUE LOL","i":70,"k":"217","l":"img_70","p":"$20.000,00","u":19,"v":20000,"z":10},{"c":10,"d":"KIT APLIQUE SURTIDO 2","i":71,"k":"218","l":"img_71","p":"$21.200,00","u":19,"v":21200,"z":10},{"c":10,"d":"MOLDE APLIQUE BABY","i":261,"k":"166","l":"img_261","p":"$14.800,00","u":19,"v":14800,"z":10},{"c":10,"d":"MOLDE APLIQUE CUTE","i":269,"k":"343","l":"img_269","p":"$27.000,00","u":19,"v":27000,"z":10},{"c":10,"d":"MOLDE APLIQUE DULCES 2","i":260,"k":"165","l":"img_260","p":"$15.800,00","u":19,"v":15800,"z":10},{"c":10,"d":"MOLDE APLIQUE FLORES","i":3,"k":"103","l":"img_3","p":"$11.800,00","u":19,"v":11800,"z":10},{"c":10,"d":"MOLDE APLIQUE NAVIDAD","i":5,"k":"202","l":"img_5","p":"$11.700,00","u":19,"v":11700,"z":10},{"c":10,"d":"MOLDE APLIQUE PERRITO","i":336,"k":"300","l":"img_336","p":"$24.000,00","u":19,"v":24000,"z":10},{"c":10,"d":"MOLDE APLIQUE SURTIDO 3 CARRITO","i":265,"k":"250","l":"img_265","p":"$23.000,00","u":19,"v":23000,"z":10},{"c":10,"d":"MOLDE APLIQUE SURTIDO 4 PALMA","i":266,"k":"251","l":"img_266","p":"$23.000,00","u":19,"v":23000,"z":10},{"c":10,"d":"MOLDE APLIQUE SURTIDO I","i":14,"k":"305","l":"img_14","p":"$19.000,00","u":19,"v":19000,"z":10},{"c":10,"d":"MOLDE APLIQUES ANIMALES 2","i":257,"k":"160","l":"img_257","p":"$12.000,00","u":19,"v":12000,"z":10},{"c":10,"d":"MOLDE APLIQUES FLORES 3","i":259,"k":"164","l":"img_259","p":"$13.800,00","u":19,"v":13800,"z":10},{"c":10,"d":"MOLDE APLIQUES FLORES 4","i":263,"k":"168","l":"img_263","p":"$16.800,00","u":19,"v":16800,"z":10},{"c":10,"d":"MOLDE APLIQUES LOVE","i":267,"k":"252","l":"img_267","p":"$24.000,00","u":19,"v":24000,"z":10},{"c":10,"d":"MOLDE APLIQUES MO�OS 2","i":258,"k":"161","l":"img_258","p":"$13.000,00","u":19,"v":13000,"z":10},{"c":10,"d":"MOLDE BEAR","i":293,"k":"149","l":"img_293","p":"$20.000,00","u":19,"v":20000,"z":10},{"c":10,"d":"MOLDE CRUCES","i":1,"k":"101","l":"img_1","p":"$10.600,00","u":19,"v":10600,"z":10},{"c":10,"d":"MOLDE CUPCAKE DISNEY","i":262,"k":"167","l":"img_262","p":"$15.000,00","u":19,"v":15000,"z":10},{"c":10,"d":"MOLDE MONOS","i":6,"k":"203","l":"img_6","p":"$15.500,00","u":19,"v":15500,"z":10},{"c":10,"d":"MOLDE MOÑOS GRANDE SURTUDO","i":282,"k":"258","l":"img_282","p":"$22.500,00","u":19,"v":22500,"z":10},{"c":10,"d":"MOLDE MOÑOS MEDIANOS","i":283,"k":"257","l":"img_283","p":"$19.000,00","u":19,"v":19000,"z":10},{"c":10,"d":"MOLDE NINA MINI","i":2,"k":"102","l":"img_2","p":"$11.600,00","u":19,"v":11600,"z":10},{"c":10,"d":"MOLDE POMPAS","i":264,"k":"249","l":"img_264","p":"$20.000,00","u":19,"v":20000,"z":10},{"c":10,"d":"MOLE APLIQUE PRINCESA 3","i":268,"k":"342","l":"img_268","p":"$24.900,00","u":19,"v":24900,"z":10},{"c":10,"d":"NIÑAS MINI","i":61,"k":"116","l":"img_61","p":"$13.400,00","u":19,"v":13400,"z":10},{"c":11,"d":"KIT BABAY RECORDATORIAO","i":76,"k":"316","l":"img_76","p":"$22.800,00","u":19,"v":22800,"z":10},{"c":11,"d":"MOLDE BABY ELEFANTE","i":270,"k":"253","l":"img_270","p":"$20.500,00","u":19,"v":20500,"z":10},{"c":11,"d":"MOLDE BABY LUNA","i":272,"k":"255","l":"img_272","p":"$21.600,00","u":19,"v":21600,"z":10},{"c":11,"d":"MOLDE ELEFANTE AMOROSO","i":273,"k":"346","l":"img_273","p":"$22.000,00","u":19,"v":22000,"z":10},{"c":12,"d":"MOLDE CABELL 7 COLETA","i":229,"k":"420","l":"img_229","p":"$24.400,00","u":19,"v":24400,"z":10},{"c":12,"d":"MOLDE CABELLO 2 M","i":197,"k":"242","l":"img_197","p":"$20.700,00","u":19,"v":20700,"z":10},{"c":12,"d":"MOLDE CABELLO 4 TRENZA","i":226,"k":"337","l":"img_226","p":"$22.000,00","u":19,"v":22000,"z":10},{"c":12,"d":"MOLDE CABELLO 5LISO","i":227,"k":"338","l":"img_227","p":"$24.000,00","u":19,"v":24000,"z":10},{"c":12,"d":"MOLDE CABELLO 6 AFRO","i":228,"k":"419","l":"img_228","p":"$25.400,00","u":19,"v":25400,"z":10},{"c":12,"d":"MOLDE CABELLO 8 RIZO","i":230,"k":"521","l":"img_230","p":"$27.900,00","u":19,"v":27900,"z":10},{"c":12,"d":"MOLDE CABELLOS","i":73,"k":"220","l":"img_73","p":"$15.800,00","u":19,"v":15800,"z":10},{"c":12,"d":"MOLDE CABELLOS NUEVOS","i":600,"k":"264","l":"img_600","p":"$25.000,00","u":19,"v":25000,"z":10},{"c":8,"d":"FLOR 3 PETALOS","i":66,"k":"208","l":"img_66","p":"$14.815,00","u":19,"v":14815,"z":10},{"c":8,"d":"FLOR JASMIN","i":57,"k":"112","l":"img_57","p":"$11.000,00","u":19,"v":11000,"z":10},{"c":8,"d":"FLOR SILVESTRE","i":58,"k":"113","l":"img_58","p":"$11.650,00","u":19,"v":11650,"z":10},{"c":8,"d":"FRUTAS","i":146,"k":"235","l":"img_146","p":"$20.000,00","u":19,"v":20000,"z":10},{"c":8,"d":"KIT BOTONES","i":68,"k":"215","l":"img_68","p":"$18.200,00","u":19,"v":18200,"z":10},{"c":8,"d":"KIT HOJAS *4","i":75,"k":"315","l":"img_75","p":"$22.500,00","u":19,"v":22500,"z":10},{"c":8,"d":"KIT HONGOS 3D","i":80,"k":"508","l":"img_80","p":"$27.900,00","u":19,"v":27900,"z":10},{"c":8,"d":"KIT MARGARITAS *4","i":212,"k":"335","l":"img_212","p":"$26.500,00","u":19,"v":26500,"z":10},{"c":8,"d":"MARGARITA MEDIA","i":206,"k":"158","l":"img_206","p":"$13.800,00","u":19,"v":13800,"z":10},{"c":8,"d":"MOLDE AGUACATE","i":214,"k":"517","l":"img_214","p":"$28.700,00","u":19,"v":28700,"z":10},{"c":8,"d":"MOLDE CACTUS ARBOL","i":207,"k":"162","l":"img_207","p":"$16.800,00","u":19,"v":16800,"z":10},{"c":8,"d":"MOLDE CACTUS REDONDO","i":210,"k":"333","l":"img_210","p":"$24.500,00","u":19,"v":24500,"z":10},{"c":8,"d":"MOLDE CANASTO TULIPAN","i":209,"k":"244","l":"img_209","p":"$19.800,00","u":19,"v":19800,"z":10},{"c":8,"d":"MOLDE FLORES GRANDES","i":242,"k":"614","l":"img_242","p":"$36.000,00","u":19,"v":36000,"z":10},{"c":8,"d":"MOLDE FLORES SURTIDA","i":15,"k":"306","l":"img_15","p":"$22.800,00","u":19,"v":22800,"z":10},{"c":8,"d":"MOLDE FRESA","i":204,"k":"155","l":"img_204","p":"$11.500,00","u":19,"v":11500,"z":10},{"c":8,"d":"MOLDE HOJA SUCULENTA","i":219,"k":"159","l":"null","p":"$11.000,00","u":19,"v":11000,"z":10},{"c":8,"d":"MOLDE MANZANA LIMON","i":225,"k":"336","l":"img_225","p":"$18.500,00","u":19,"v":18500,"z":10},{"c":8,"d":"MOLDE MASORCA","i":202,"k":"153","l":"img_202","p":"$10.000,00","u":19,"v":10000,"z":10},{"c":8,"d":"MOLDE MEDIA CALABAZA","i":203,"k":"154","l":"img_203","p":"$11.500,00","u":19,"v":11500,"z":10},{"c":8,"d":"MOLDE ROSAS","i":4,"k":"201","l":"img_4","p":"$15.300,00","u":19,"v":15300,"z":10},{"c":8,"d":"MOLDE TULIPAN *3","i":216,"k":"520","l":"img_216","p":"$32.000,00","u":19,"v":32000,"z":10},{"c":8,"d":"MOLDE UVA","i":205,"k":"156","l":"img_205","p":"$11.700,00","u":19,"v":11700,"z":10},{"c":8,"d":"MOLDE ZANAHORIA SURTIDA","i":234,"k":"248","l":"img_234","p":"$16.500,00","u":19,"v":16500,"z":10},{"c":8,"d":"REGADERA","i":144,"k":"137","l":"img_144","p":"$13.700,00","u":19,"v":13700,"z":10},{"c":13,"d":"EMILI UNIVERSAL","i":90,"k":"606","l":"img_90","p":"$32.900,00","u":19,"v":32900,"z":10},{"c":13,"d":"KIT CUERPO COMPLETO","i":55,"k":"506","l":"img_55","p":"$32.900,00","u":19,"v":32900,"z":10},{"c":13,"d":"KIT VESTIDOS GRANDES","i":188,"k":"703","l":"img_188","p":"$48.000,00","u":19,"v":48000,"z":10},{"c":13,"d":"MIKI MAUSE M","i":129,"k":"801","l":"img_129","p":"$59.000,00","u":19,"v":59000,"z":10},{"c":13,"d":"MOLDE ABUELOS UP","i":291,"k":"625","l":"null","p":"$59.500,00","u":19,"v":59500,"z":10},{"c":13,"d":"MOLDE CARRO DE LADO","i":277,"k":"528","l":"img_277","p":"$36.000,00","u":19,"v":36000,"z":10},{"c":13,"d":"MOLDE CARROS *2","i":276,"k":"527","l":"img_276","p":"$39.000,00","u":19,"v":39000,"z":10},{"c":13,"d":"MOLDE LOL","i":19,"k":"404","l":"img_19","p":"$24.000,00","u":19,"v":24000,"z":10},{"c":13,"d":"MOLDE MAGNOLIA GRANDE","i":608,"k":"615","l":"img_608","p":"$75.000,00","u":19,"v":75000,"z":10},{"c":13,"d":"MOLDE MAGNOLIA MEDIANA","i":609,"k":"532","l":"img_609","p":"$60.000,00","u":19,"v":60000,"z":10},{"c":13,"d":"MOLDE MIKI MAUSE","i":130,"k":"802","l":"img_130","p":"$78.000,00","u":19,"v":78000,"z":10},{"c":13,"d":"MOLDE MODELOS RELIGIOSOS","i":187,"k":"702","l":"img_187","p":"$54.000,00","u":19,"v":54000,"z":10},{"c":13,"d":"MOLDE NIÑA BASE","i":278,"k":"621","l":"img_278","p":"$49.500,00","u":19,"v":49500,"z":10},{"c":13,"d":"MOLDE NIÑA BASE 2","i":279,"k":"622","l":"img_279","p":"$56.000,00","u":19,"v":56000,"z":10},{"c":13,"d":"MOLDE UNIVERSAL GORDITO","i":24,"k":"603","l":"img_24","p":"$33.000,00","u":19,"v":33000,"z":10},{"c":13,"d":"MOLDE UNIVERSAL SENTADITO","i":22,"k":"601","l":"img_22","p":"$33.000,00","u":19,"v":33000,"z":10},{"c":13,"d":"MOÑOS GRANDES","i":147,"k":"236","l":"img_147","p":"$16.000,00","u":19,"v":16000,"z":10},{"c":13,"d":"MUÑECA DORMILONA","i":182,"k":"T001","l":"img_182","p":"$34.000,00","u":19,"v":34000,"z":10},{"c":13,"d":"NOVIOSGRA DES","i":615,"k":"NOVIOSGRANDE","l":"null","p":"$89.600,00","u":19,"v":89600,"z":10},{"c":13,"d":"POPOCHO UNIVERSAL","i":91,"k":"607","l":"img_91","p":"$31.000,00","u":19,"v":31000,"z":10},{"c":13,"d":"TILDA BABY GRANDE","i":183,"k":"T005","l":"img_183","p":"$37.000,00","u":19,"v":37000,"z":10},{"c":4,"d":"CARAMELOS","i":47,"k":"313","l":"img_47","p":"$19.600,00","u":19,"v":19600,"z":10},{"c":4,"d":"CHOCOLATE","i":34,"k":"111","l":"img_34","p":"$10.800,00","u":19,"v":10800,"z":10},{"c":4,"d":"CONO","i":32,"k":"109","l":"img_32","p":"$12.000,00","u":19,"v":12000,"z":10},{"c":4,"d":"CUPCAKE 7CM","i":67,"k":"214","l":"img_67","p":"$18.800,00","u":19,"v":18800,"z":10},{"c":4,"d":"CUPCAKE PLANO","i":28,"k":"105","l":"img_28","p":"$11.000,00","u":19,"v":11000,"z":10},{"c":4,"d":"DONA GRANDE 6CM","i":74,"k":"314","l":"img_74","p":"$21.500,00","u":19,"v":21500,"z":10},{"c":4,"d":"GALLETA CHIP MEDIANA","i":33,"k":"110","l":"img_33","p":"$10.800,00","u":19,"v":10800,"z":10},{"c":4,"d":"GALLETA OREO * 2","i":140,"k":"133","l":"img_140","p":"$11.500,00","u":19,"v":11500,"z":10},{"c":4,"d":"GALLETAS SURTIDAS","i":198,"k":"332","l":"img_198","p":"$23.000,00","u":19,"v":23000,"z":10},{"c":4,"d":"KIT COFFI","i":53,"k":"504","l":"img_53","p":"$26.800,00","u":19,"v":26800,"z":10},{"c":4,"d":"KIT CONITOS","i":38,"k":"211","l":"null","p":"$20.078,00","u":19,"v":20078,"z":10},{"c":4,"d":"KIT CONO FANTACIA","i":51,"k":"408","l":"img_51","p":"$24.400,00","u":19,"v":24400,"z":10},{"c":4,"d":"KIT CUPCAKE 3D ARREGLADO","i":56,"k":"507","l":"img_56","p":"$27.900,00","u":19,"v":27900,"z":10},{"c":4,"d":"KIT DONA FANTACIA","i":40,"k":"213","l":"img_40","p":"$19.600,00","u":19,"v":19600,"z":10},{"c":4,"d":"KIT GALLETAS","i":49,"k":"406","l":"img_49","p":"$26.500,00","u":19,"v":26500,"z":10},{"c":4,"d":"KIT LUNCH","i":54,"k":"505","l":"img_54","p":"$26.000,00","u":19,"v":26000,"z":10},{"c":4,"d":"MACARRONES","i":37,"k":"210","l":"img_37","p":"$19.500,00","u":19,"v":19500,"z":10},{"c":4,"d":"MOLDE CANDY","i":200,"k":"515","l":"img_200","p":"$28.500,00","u":19,"v":28500,"z":10},{"c":4,"d":"MOLDE CUPCAKE GRANDE TAZA","i":240,"k":"523","l":"img_240","p":"$29.600,00","u":19,"v":29600,"z":10},{"c":4,"d":"MOLDE DONA GLASEADO","i":221,"k":"157","l":"img_221","p":"$13.700,00","u":19,"v":13700,"z":10},{"c":4,"d":"MOLDE DONA ROSCA","i":223,"k":"245","l":"img_223","p":"$17.000,00","u":19,"v":17000,"z":10},{"c":4,"d":"MOLDE DUO PAN CROASAN","i":7,"k":"204","l":"img_7","p":"$14.000,00","u":19,"v":14000,"z":10},{"c":4,"d":"MOLDE DUO PAN ROLLO","i":9,"k":"206","l":"img_9","p":"$16.000,00","u":19,"v":16000,"z":10},{"c":4,"d":"MOLDE DUO PANA AZUCAR","i":8,"k":"205","l":"img_8","p":"$14.000,00","u":19,"v":14000,"z":10},{"c":4,"d":"MOLDE FRUTA GRANDE IMAN","i":215,"k":"0","l":"null","p":"$32.000,00","u":19,"v":32000,"z":10},{"c":4,"d":"MOLDE GALLETA CORAZON","i":236,"k":"340","l":"img_236","p":"$18.000,00","u":19,"v":18000,"z":10},{"c":4,"d":"MOLDE GALLETA REDONDA","i":238,"k":"421","l":"img_238","p":"$25.200,00","u":19,"v":25200,"z":10},{"c":4,"d":"MOLDE HELADOS","i":16,"k":"401","l":"img_16","p":"$24.800,00","u":19,"v":24800,"z":10},{"c":4,"d":"MOLDE KIT DULCE NUBE","i":12,"k":"303","l":"img_12","p":"$19.000,00","u":19,"v":19000,"z":10},{"c":4,"d":"MOLDE KIT PANES","i":10,"k":"301","l":"img_10","p":"$21.200,00","u":19,"v":21200,"z":10},{"c":4,"d":"MOLDE PALETA","i":27,"k":"104","l":"img_27","p":"$11.000,00","u":19,"v":11000,"z":10},{"c":4,"d":"MOLDE ROSACA Y WAFLE","i":237,"k":"341","l":"img_237","p":"$21.200,00","u":19,"v":21200,"z":10},{"c":4,"d":"MOLDE TOSTADAS","i":239,"k":"422","l":"img_239","p":"$25.200,00","u":19,"v":25200,"z":10},{"c":4,"d":"MUELITA DULCE","i":150,"k":"324","l":"img_150","p":"$23.900,00","u":19,"v":23900,"z":10},{"c":4,"d":"PAN CON HUEVO","i":31,"k":"108","l":"img_31","p":"$11.650,00","u":19,"v":11650,"z":10},{"c":9,"d":"MARCO GRANDE","i":103,"k":"226","l":"img_103","p":"$21.000,00","u":19,"v":21000,"z":10},{"c":9,"d":"MARCO NO. 1","i":105,"k":"229","l":"img_105","p":"$17.600,00","u":19,"v":17600,"z":10},{"c":9,"d":"MARCO NO. 2","i":99,"k":"222","l":"img_99","p":"$16.800,00","u":19,"v":16800,"z":10},{"c":9,"d":"MARCO NO. 3","i":97,"k":"126","l":"img_97","p":"$12.300,00","u":19,"v":12300,"z":10},{"c":9,"d":"MARCO NO. 4","i":98,"k":"221","l":"img_98","p":"$13.400,00","u":19,"v":13400,"z":10},{"c":9,"d":"MARCO NO. 5","i":94,"k":"123","l":"img_94","p":"$11.300,00","u":19,"v":11300,"z":10},{"c":9,"d":"MARCO NO. 6","i":92,"k":"121","l":"img_92","p":"$12.000,00","u":19,"v":12000,"z":10},{"c":5,"d":"ANGEL 3D","i":128,"k":"609","l":"img_128","p":"$40.000,00","u":19,"v":40000,"z":10},{"c":5,"d":"APLIQUE ROPA SURTIDO 2","i":155,"k":"417","l":"img_155","p":"$35.000,00","u":19,"v":35000,"z":10},{"c":5,"d":"BABY ANGEL","i":122,"k":"320","l":"img_122","p":"$19.000,00","u":19,"v":19000,"z":10},{"c":5,"d":"BABY PACHO","i":154,"k":"328","l":"img_154","p":"$20.000,00","u":19,"v":20000,"z":10},{"c":5,"d":"BAILARIAN 3","i":165,"k":"513","l":"img_165","p":"$31.700,00","u":19,"v":31700,"z":10},{"c":5,"d":"CABEZOTAS","i":161,"k":"240","l":"img_161","p":"$20.000,00","u":19,"v":20000,"z":10},{"c":5,"d":"DORMILONA PEQUE�A","i":190,"k":"T007","l":"img_190","p":"$14.500,00","u":19,"v":14500,"z":10},{"c":5,"d":"HALLOWEN 4","i":330,"k":"608","l":"null","p":"$47.000,00","u":19,"v":47000,"z":10},{"c":5,"d":"KIT BAILARINA","i":121,"k":"234","l":"img_121","p":"$18.500,00","u":19,"v":18500,"z":10},{"c":5,"d":"KIT GORJUS","i":52,"k":"503","l":"img_52","p":"$29.400,00","u":19,"v":29400,"z":10},{"c":5,"d":"KIT HALLOWEEN","i":104,"k":"228","l":"img_104","p":"$21.000,00","u":19,"v":21000,"z":10},{"c":5,"d":"KIT PRINCESA 2","i":41,"k":"307","l":"img_41","p":"$19.800,00","u":19,"v":19800,"z":10},{"c":5,"d":"KIT SOLO SIRENAS","i":166,"k":"514","l":"img_166","p":"$40.000,00","u":19,"v":40000,"z":10},{"c":5,"d":"MAGIC DOLL","i":44,"k":"310","l":"img_44","p":"$23.000,00","u":19,"v":23000,"z":10},{"c":5,"d":"MOLDE ANDRE","i":596,"k":"170","l":"img_596","p":"$21.000,00","u":19,"v":21000,"z":10},{"c":5,"d":"MOLDE ANGELITA BRASILERA","i":598,"k":"172","l":"img_598","p":"$22.000,00","u":19,"v":22000,"z":10},{"c":5,"d":"MOLDE APLIQUE VESTIDOS 2","i":303,"k":"424","l":"img_303","p":"$32.000,00","u":19,"v":32000,"z":10},{"c":5,"d":"MOLDE APLIQUES CUERPOS","i":281,"k":"256","l":"null","p":"$20.500,00","u":19,"v":20500,"z":10},{"c":5,"d":"MOLDE BAILARINA 2 LADO","i":163,"k":"331","l":"img_163","p":"$26.500,00","u":19,"v":26500,"z":10},{"c":5,"d":"MOLDE CABEZON AMOROSO","i":334,"k":"348","l":"null","p":"$22.000,00","u":19,"v":22000,"z":10},{"c":5,"d":"MOLDE CARAS PRINCESA *4","i":280,"k":"623","l":"img_280","p":"$65.800,00","u":19,"v":65800,"z":10},{"c":5,"d":"MOLDE CARAS VARIAS","i":606,"k":"526","l":"img_606","p":"$40.000,00","u":19,"v":40000,"z":10},{"c":5,"d":"MOLDE CARRITOS PEQUEÑOS","i":299,"k":"347","l":"img_299","p":"$29.700,00","u":19,"v":29700,"z":10},{"c":5,"d":"MOLDE DOLLS \/GORJUS","i":274,"k":"345","l":"img_274","p":"$24.000,00","u":19,"v":24000,"z":10},{"c":5,"d":"MOLDE GIRLS VARIOS","i":337,"k":"427","l":"img_337","p":"$28.900,00","u":19,"v":28900,"z":10},{"c":5,"d":"MOLDE HADA BABY","i":119,"k":"232","l":"img_119","p":"$17.000,00","u":19,"v":17000,"z":10},{"c":5,"d":"MOLDE HALLOWEN 3","i":290,"k":"624","l":"img_290","p":"$74.000,00","u":19,"v":74000,"z":10},{"c":5,"d":"MOLDE HOLLOWENN 2","i":217,"k":"620","l":"img_217","p":"$44.000,00","u":19,"v":44000,"z":10},{"c":5,"d":"MOLDE JARDINERAS","i":305,"k":"519","l":"img_305","p":"$38.800,00","u":19,"v":38800,"z":10},{"c":5,"d":"MOLDE JUAN","i":151,"k":"325","l":"img_151","p":"$29.700,00","u":19,"v":29700,"z":10},{"c":5,"d":"MOLDE MADRIGALES","i":286,"k":"530","l":"null","p":"$32.000,00","u":19,"v":32000,"z":10},{"c":5,"d":"MOLDE MELINDA PEQUE�O","i":220,"k":"152","l":"img_220","p":"$12.700,00","u":19,"v":12700,"z":10},{"c":5,"d":"MOLDE MIX PRINCESA 1","i":298,"k":"344","l":"img_298","p":"$28.500,00","u":19,"v":28500,"z":10},{"c":5,"d":"MOLDE NIÑA ALEJA","i":300,"k":"349","l":"img_300","p":"$32.000,00","u":19,"v":32000,"z":10},{"c":5,"d":"MOLDE NIÑA ANITA","i":211,"k":"334","l":"img_211","p":"$31.500,00","u":19,"v":31500,"z":10},{"c":5,"d":"MOLDE NIÑA DANIELA","i":304,"k":"518","l":"img_304","p":"$38.500,00","u":19,"v":38500,"z":10},{"c":5,"d":"MOLDE NIÑA EVA","i":296,"k":"261","l":"img_296","p":"$20.000,00","u":19,"v":20000,"z":10},{"c":5,"d":"MOLDE NIÑA LUZ","i":602,"k":"353","l":"img_602","p":"$30.000,00","u":19,"v":30000,"z":10},{"c":5,"d":"MOLDE NIÑA OVEROL","i":607,"k":"525","l":"img_607","p":"$35.000,00","u":19,"v":35000,"z":10},{"c":5,"d":"MOLDE NIÑA SALI","i":601,"k":"355","l":"img_601","p":"$27.800,00","u":19,"v":27800,"z":10},{"c":5,"d":"MOLDE NIÑA SCUTER","i":295,"k":"260","l":"null","p":"$20.000,00","u":19,"v":20000,"z":10},{"c":5,"d":"MOLDE NIÑA SOFIA","i":604,"k":"428","l":"img_604","p":"$34.000,00","u":19,"v":34000,"z":10},{"c":5,"d":"MOLDE NIÑA VALERY","i":603,"k":"354","l":"img_603","p":"$32.000,00","u":19,"v":32000,"z":10},{"c":5,"d":"MOLDE NIÑAS BRASILERAS","i":285,"k":"529","l":"img_285","p":"$38.000,00","u":19,"v":38000,"z":10},{"c":5,"d":"MOLDE NIÑAS FLORES","i":292,"k":"139","l":"img_292","p":"$16.500,00","u":19,"v":16500,"z":10},{"c":5,"d":"MOLDE NIÑAS UNIVERSAL","i":275,"k":"425","l":"null","p":"$28.800,00","u":19,"v":28800,"z":10},{"c":5,"d":"MOLDE PRINCESA CABEZONA","i":302,"k":"423","l":"img_302","p":"$36.500,00","u":19,"v":36500,"z":10},{"c":5,"d":"MOLDE PRINCESA MEDIANA","i":18,"k":"403","l":"img_18","p":"$30.500,00","u":19,"v":30500,"z":10},{"c":5,"d":"MOLDE PRINCESA PEQUENA","i":13,"k":"304","l":"img_13","p":"$19.500,00","u":19,"v":19500,"z":10},{"c":5,"d":"MOLDE ROPA 1","i":153,"k":"327","l":"img_153","p":"$24.500,00","u":19,"v":24500,"z":10},{"c":5,"d":"MOLDE SARA GRANDE","i":232,"k":"613","l":"img_232","p":"$49.700,00","u":19,"v":49700,"z":10},{"c":5,"d":"MOLDE SARA PEQUEÑO","i":213,"k":"418","l":"img_213","p":"$31.800,00","u":19,"v":31800,"z":10},{"c":5,"d":"MOLDE SOFI","i":152,"k":"326","l":"img_152","p":"$32.000,00","u":19,"v":32000,"z":10},{"c":5,"d":"MOLDE TOLDA PIERNA LARGA","i":241,"k":"524","l":"img_241","p":"$30.700,00","u":19,"v":30700,"z":10},{"c":5,"d":"MOLDE VESTIDO PRINCESS","i":335,"k":"350","l":"null","p":"$24.800,00","u":19,"v":24800,"z":10},{"c":5,"d":"MOLDE ZAPATICOS 2","i":597,"k":"171","l":"img_597","p":"$20.000,00","u":19,"v":20000,"z":10},{"c":5,"d":"MUÑECA RUSA DE TRAPO","i":196,"k":"T009","l":"img_196","p":"$24.000,00","u":19,"v":24000,"z":10},{"c":5,"d":"NIÑA CON GORRO","i":113,"k":"127","l":"img_113","p":"$11.700,00","u":19,"v":11700,"z":10},{"c":5,"d":"NIÑA MELINDA","i":193,"k":"148","l":"img_193","p":"$18.500,00","u":19,"v":18500,"z":10},{"c":5,"d":"NIÑA MILI","i":114,"k":"128","l":"img_114","p":"$13.500,00","u":19,"v":13500,"z":10},{"c":5,"d":"NIÑA SALO","i":195,"k":"241","l":"img_195","p":"$21.000,00","u":19,"v":21000,"z":10},{"c":5,"d":"NIÑO PIJAMA","i":115,"k":"129","l":"img_115","p":"$14.000,00","u":19,"v":14000,"z":10},{"c":5,"d":"NOVIOS","i":48,"k":"405","l":"img_48","p":"$25.600,00","u":19,"v":25600,"z":10},{"c":5,"d":"PRINCESA YAYIS","i":605,"k":"429","l":"img_605","p":"$35.500,00","u":19,"v":35500,"z":10},{"c":5,"d":"TILDA BABAY PEQUEÑA","i":189,"k":"T006","l":"img_189","p":"$15.300,00","u":19,"v":15300,"z":10},{"c":5,"d":"TILDA BABY MEDIANA","i":179,"k":"T004","l":"img_179","p":"$25.000,00","u":19,"v":25000,"z":10},{"c":5,"d":"TILDA GORDITA COMPLETA","i":181,"k":"T003","l":"img_181","p":"$26.500,00","u":19,"v":26500,"z":10},{"c":5,"d":"TORSO TILDA","i":185,"k":"T002","l":"img_185","p":"$41.900,00","u":19,"v":41900,"z":10},{"c":5,"d":"UNIVERSAL PERSONAJE MINI","i":149,"k":"238","l":"img_149","p":"$16.900,00","u":19,"v":16900,"z":10},{"c":3,"d":"ADORNO 2 SOLDADO","i":134,"k":"N078","l":"img_134","p":"$20.700,00","u":19,"v":20700,"z":10},{"c":3,"d":"ADORNO 3 GORDITO","i":132,"k":"N021","l":"img_132","p":"$49.700,00","u":19,"v":49700,"z":10},{"c":3,"d":"ADORNO NAVIDEÑO VELA","i":138,"k":"N099","l":"img_138","p":"$33.900,00","u":19,"v":33900,"z":10},{"c":3,"d":"BOTA GRANDE","i":173,"k":"N011","l":"img_173","p":"$28.000,00","u":19,"v":28000,"z":10},{"c":3,"d":"DUENDE SENTADITO","i":131,"k":"N012","l":"img_131","p":"$30.000,00","u":19,"v":30000,"z":10},{"c":3,"d":"FIGURA ADORNO NAVIDEÑO","i":176,"k":"N020","l":"img_176","p":"$46.500,00","u":19,"v":46500,"z":10},{"c":3,"d":"GOMO NAVIDEÑO 2","i":168,"k":"N074","l":"img_168","p":"$20.500,00","u":19,"v":20500,"z":10},{"c":3,"d":"GORDITO NAVIDEÑO","i":135,"k":"N079","l":"img_135","p":"$21.500,00","u":19,"v":21500,"z":10},{"c":3,"d":"GORRO GRANDE","i":170,"k":"N095","l":"img_170","p":"$25.000,00","u":19,"v":25000,"z":10},{"c":3,"d":"GUANTE GRANDE","i":171,"k":"N018","l":"img_171","p":"$29.000,00","u":19,"v":29000,"z":10},{"c":3,"d":"KIT BOMBILLAS","i":169,"k":"N009","l":"img_169","p":"$13.700,00","u":19,"v":13700,"z":10},{"c":3,"d":"KIT DUENDE","i":85,"k":"N064","l":"img_85","p":"$17.800,00","u":19,"v":17800,"z":10},{"c":3,"d":"KIT NAVIDAD GUANTE","i":84,"k":"N067","l":"img_84","p":"$18.500,00","u":19,"v":18500,"z":10},{"c":3,"d":"MOLDE ADORNO NAVIDE�O HONGO","i":317,"k":"N033","l":"img_317","p":"$38.900,00","u":19,"v":38900,"z":10},{"c":3,"d":"MOLDE ANGEL NAVIDAD","i":251,"k":"N043","l":"img_251","p":"$25.400,00","u":19,"v":25400,"z":10},{"c":3,"d":"MOLDE ANGEL NOCHE BUENA","i":254,"k":"N062","l":"img_254","p":"$28.500,00","u":19,"v":28500,"z":10},{"c":3,"d":"MOLDE ANIMALITOS PATONES","i":243,"k":"N013","l":"img_243","p":"$21.500,00","u":19,"v":21500,"z":10},{"c":3,"d":"MOLDE ANIMALITOS TRINEO","i":324,"k":"N086","l":"img_324","p":"$40.000,00","u":19,"v":40000,"z":10},{"c":3,"d":"MOLDE APLIQUES NAVIDENO 2","i":312,"k":"N027","l":"img_312","p":"$29.800,00","u":19,"v":29800,"z":10},{"c":3,"d":"MOLDE BOMBILLOS MEDIANOS","i":318,"k":"N034","l":"img_318","p":"$36.000,00","u":19,"v":36000,"z":10},{"c":3,"d":"MOLDE BOTONES NACIMIENTO","i":315,"k":"N031","l":"img_315","p":"$30.000,00","u":19,"v":30000,"z":10},{"c":3,"d":"MOLDE BOTONES NAVIE�O PARA TELA","i":314,"k":"N029","l":"img_314","p":"$38.000,00","u":19,"v":38000,"z":10},{"c":3,"d":"MOLDE CARRITO NAVIDEÑO","i":253,"k":"N061","l":"img_253","p":"$36.000,00","u":19,"v":36000,"z":10},{"c":3,"d":"MOLDE CASITA NACIMIENTO","i":255,"k":"N071","l":"img_255","p":"$34.000,00","u":19,"v":34000,"z":10},{"c":3,"d":"MOLDE DUENDE COMPLETO","i":250,"k":"N042","l":"img_250","p":"$28.600,00","u":19,"v":28600,"z":10},{"c":3,"d":"MOLDE DUENDE NAVIDAD POPOCHO","i":252,"k":"N050","l":"img_252","p":"$29.700,00","u":19,"v":29700,"z":10},{"c":3,"d":"MOLDE HOJAS NAVIDEÑAS","i":310,"k":"N025","l":"img_310","p":"$38.000,00","u":19,"v":38000,"z":10},{"c":3,"d":"MOLDE KIT GORRA,BOTA,GUANTE","i":322,"k":"N060","l":"img_322","p":"$39.000,00","u":19,"v":39000,"z":10},{"c":3,"d":"MOLDE KIT NAVIDAD CARAS","i":21,"k":"502","l":"img_21","p":"$36.800,00","u":19,"v":36800,"z":10},{"c":3,"d":"MOLDE KIT NAVIDAD COMPLETO","i":20,"k":"501","l":"img_20","p":"$27.500,00","u":19,"v":27500,"z":10},{"c":3,"d":"MOLDE MARIAS EMBARAZADAS","i":319,"k":"N035","l":"img_319","p":"$36.000,00","u":19,"v":36000,"z":10},{"c":3,"d":"MOLDE NACIMIENTO CASITA IMAN","i":316,"k":"N032","l":"img_316","p":"$37.000,00","u":19,"v":37000,"z":10},{"c":3,"d":"MOLDE NACIMIENTO CLASICO","i":321,"k":"N056","l":"img_321","p":"$56.000,00","u":19,"v":56000,"z":10},{"c":3,"d":"MOLDE NACIMIENTO GRANDE PIES","i":326,"k":"N096","l":"img_326","p":"$69.000,00","u":19,"v":69000,"z":10},{"c":3,"d":"MOLDE NACIMIENTO LUZ","i":256,"k":"N091","l":"img_256","p":"$44.000,00","u":19,"v":44000,"z":10},{"c":3,"d":"MOLDE NACIMIENTO MEDIANO DOBLE","i":323,"k":"N072","l":"img_323","p":"$60.000,00","u":19,"v":60000,"z":10},{"c":3,"d":"MOLDE NACIMIENTO MINI","i":245,"k":"N016","l":"img_245","p":"$25.000,00","u":19,"v":25000,"z":10},{"c":3,"d":"MOLDE NACIMIENTO MINIATURA","i":244,"k":"N014","l":"img_244","p":"$18.000,00","u":19,"v":18000,"z":10},{"c":3,"d":"MOLDE NACIMIENTO OSITO","i":327,"k":"N058","l":"img_327","p":"$42.000,00","u":19,"v":42000,"z":10},{"c":3,"d":"MOLDE NACIMIENTO PLANO PEQUEÑO","i":11,"k":"302","l":"img_11","p":"$18.000,00","u":19,"v":18000,"z":10},{"c":3,"d":"MOLDE NARICES NIEVE","i":308,"k":"N017","l":"img_308","p":"$19.900,00","u":19,"v":19900,"z":10},{"c":3,"d":"MOLDE NAVIDAD ESFERAS","i":247,"k":"N023","l":"img_247","p":"$23.000,00","u":19,"v":23000,"z":10},{"c":3,"d":"MOLDE NAVIDAD PERSONAJES PATICAS","i":249,"k":"N041","l":"img_249","p":"$27.500,00","u":19,"v":27500,"z":10},{"c":3,"d":"MOLDE NIEVE\/GALLETA","i":246,"k":"N022","l":"img_246","p":"$19.000,00","u":19,"v":19000,"z":10},{"c":3,"d":"MOLDE NIÑA GNOMO","i":248,"k":"N030","l":"img_248","p":"$22.600,00","u":19,"v":22600,"z":10},{"c":3,"d":"MOLDE OFRENDA REYES","i":313,"k":"N028","l":"img_313","p":"$26.000,00","u":19,"v":26000,"z":10},{"c":3,"d":"MOLDE PINOS X2","i":174,"k":"N045","l":"img_174","p":"$35.000,00","u":19,"v":35000,"z":10},{"c":3,"d":"MOLDE SAGRADA FAMILIA","i":177,"k":"N010","l":"img_177","p":"$31.800,00","u":19,"v":31800,"z":10},{"c":3,"d":"MOLDE TREN","i":320,"k":"N055","l":"img_320","p":"$51.000,00","u":19,"v":51000,"z":10},{"c":3,"d":"MOLDE TRINEO","i":307,"k":"N015","l":"img_307","p":"$20.800,00","u":19,"v":20800,"z":10},{"c":3,"d":"MULTI FIGURA NAVIDEÑA","i":175,"k":"N040","l":"img_175","p":"$54.000,00","u":19,"v":54000,"z":10},{"c":3,"d":"NACIMIENTO 3","i":136,"k":"N093","l":"img_136","p":"$31.000,00","u":19,"v":31000,"z":10},{"c":3,"d":"NACIMIENTO GRANDE","i":137,"k":"N098","l":"img_137","p":"$52.000,00","u":19,"v":52000,"z":10},{"c":3,"d":"NACIMIENTO PLANO 2","i":72,"k":"219","l":"img_72","p":"$19.500,00","u":19,"v":19500,"z":10},{"c":3,"d":"NIEVE PEQUEÑO","i":339,"k":"N151","l":"img_339","p":"$14.500,00","u":19,"v":14500,"z":10},{"c":3,"d":"NOMO","i":133,"k":"N063","l":"img_133","p":"$17.700,00","u":19,"v":17700,"z":10},{"c":3,"d":"PAPA NOEL","i":88,"k":"N090","l":"img_88","p":"$23.000,00","u":19,"v":23000,"z":10},{"c":3,"d":"PAREJA GALLETA","i":89,"k":"N092","l":"img_89","p":"$21.900,00","u":19,"v":21900,"z":10},{"c":3,"d":"PERSONJES NAVIDEÑO MINI","i":172,"k":"N019","l":"img_172","p":"$24.500,00","u":19,"v":24500,"z":10},{"c":3,"d":"PINGÜINO","i":86,"k":"N066","l":"img_86","p":"$18.300,00","u":19,"v":18300,"z":10},{"c":3,"d":"RENITO","i":87,"k":"N069","l":"img_87","p":"$18.800,00","u":19,"v":18800,"z":10},{"c":3,"d":"SNOWMAN","i":83,"k":"N052","l":"img_83","p":"$15.200,00","u":19,"v":15200,"z":10},{"c":3,"d":"VELA CON CANDELABRO","i":167,"k":"N070","l":"img_167","p":"$20.000,00","u":19,"v":20000,"z":10},{"c":20,"d":"KIT MOLDE JOYERIA X 12","i":610,"k":"RES 006","l":"img_610","p":"$60.000,00","u":21,"v":60000,"z":10},{"c":6,"d":"APKIQUE MODISTERIA","i":616,"k":"APLIQ MODISTERIA","l":"null","p":"$31.500,00","u":19,"v":31500,"z":10},{"c":6,"d":"CAMARA FOTOGRAFICA","i":141,"k":"134","l":"img_141","p":"$13.700,00","u":19,"v":13700,"z":10},{"c":6,"d":"COLA SIRENA","i":64,"k":"119","l":"img_64","p":"$12.500,00","u":19,"v":12500,"z":10},{"c":6,"d":"COLA SIRENA GRANDE","i":127,"k":"415","l":"img_127","p":"$25.000,00","u":19,"v":25000,"z":10},{"c":6,"d":"COLA SIRENA MEDIA Y PEQ","i":118,"k":"231","l":"img_118","p":"$16.000,00","u":19,"v":16000,"z":10},{"c":6,"d":"COLMENA GRANDE","i":180,"k":"145","l":"img_180","p":"$20.700,00","u":19,"v":20700,"z":10},{"c":6,"d":"CORAZON TILDA GRANDE","i":199,"k":"T010","l":"img_199","p":"$25.000,00","u":19,"v":25000,"z":10},{"c":6,"d":"CORAZON TILDA MEDIANO","i":194,"k":"T008","l":"img_194","p":"$19.700,00","u":19,"v":19700,"z":10},{"c":6,"d":"FRASCO MERMELADA","i":231,"k":"522","l":"img_231","p":"$27.300,00","u":19,"v":27300,"z":10},{"c":6,"d":"GOTITA\/ NUBE","i":45,"k":"311","l":"img_45","p":"$19.600,00","u":19,"v":19600,"z":10},{"c":6,"d":"KIT CRUCES 2","i":69,"k":"216","l":"img_69","p":"$22.000,00","u":19,"v":22000,"z":10},{"c":6,"d":"KIT CUERNOS UNICORNIO","i":77,"k":"409","l":"img_77","p":"$25.000,00","u":19,"v":25000,"z":10},{"c":6,"d":"KIT DIA\/ NOCHE","i":46,"k":"312","l":"img_46","p":"$22.000,00","u":19,"v":22000,"z":10},{"c":6,"d":"KIT ESCOLAR 1","i":289,"k":"412","l":"img_289","p":"$27.500,00","u":19,"v":27500,"z":10},{"c":6,"d":"KIT ESCOLAR 2","i":288,"k":"426","l":"img_288","p":"$28.900,00","u":19,"v":28900,"z":10},{"c":6,"d":"KIT ESCOLAR PEQUEÑO","i":287,"k":"227","l":"img_287","p":"$22.000,00","u":19,"v":22000,"z":10},{"c":6,"d":"KIT GLOBOS","i":50,"k":"407","l":"img_50","p":"$25.600,00","u":19,"v":25600,"z":10},{"c":6,"d":"KIT GLOBOS 2","i":81,"k":"509","l":"img_81","p":"$29.000,00","u":19,"v":29000,"z":10},{"c":6,"d":"KIT GLOBOS AEROSTATICO","i":126,"k":"414","l":"img_126","p":"$25.000,00","u":19,"v":25000,"z":10},{"c":6,"d":"KIT SOMBRILLA","i":82,"k":"605","l":"img_82","p":"$29.500,00","u":19,"v":29500,"z":10},{"c":6,"d":"KIT ZAPATICOS SURTIDOS","i":284,"k":"259","l":"img_284","p":"$19.500,00","u":19,"v":19500,"z":10},{"c":6,"d":"MOLDE COLMENA POR 2","i":178,"k":"144","l":"img_178","p":"$17.000,00","u":19,"v":17000,"z":10},{"c":6,"d":"MOLDE CORONAS SURTIDA","i":333,"k":"169","l":"img_333","p":"$15.800,00","u":19,"v":15800,"z":10},{"c":6,"d":"MOLDE KIT CORAZONES","i":17,"k":"402","l":"img_17","p":"$24.000,00","u":19,"v":24000,"z":10},{"c":6,"d":"MOLDE ZAPATOS 2","i":301,"k":"416","l":"img_301","p":"$35.600,00","u":19,"v":35600,"z":10},{"c":6,"d":"NETELLA","i":139,"k":"132","l":"img_139","p":"$10.500,00","u":19,"v":10500,"z":10},{"c":6,"d":"SOMBRILLA","i":143,"k":"136","l":"img_143","p":"$13.000,00","u":19,"v":13000,"z":10},{"c":6,"d":"SORBETE","i":145,"k":"138","l":"img_145","p":"$11.800,00","u":19,"v":11800,"z":10},{"c":6,"d":"TELEFONO","i":142,"k":"135","l":"img_142","p":"$12.500,00","u":19,"v":12500,"z":10},{"c":21,"d":"VALOR FLETE","i":614,"k":"ENVIO","l":"null","p":"$15.500,00","u":2,"v":15500,"z":10},{"c":14,"d":"BROCHA SILICONA GRUESA","i":588,"k":"BROCHA SILICONA GRUESA","l":"img_588","p":"$6.800,00","u":19,"v":6800,"z":10},{"c":14,"d":"BROCHA SILICONA PEQUEÑA","i":586,"k":"BROCHA  SILICONA P","l":"img_586","p":"$6.500,00","u":19,"v":6500,"z":10},{"c":14,"d":"BROCHA SILICONA SENCILLA","i":587,"k":"BROCHA SENCILLA","l":"img_587","p":"$4.800,00","u":19,"v":4800,"z":10},{"c":14,"d":"KIT LENGUA DE GATO CERDA DURA","i":591,"k":"KIT LENGUA DE GATO  CD","l":"img_591","p":"$53.000,00","u":19,"v":53000,"z":10},{"c":14,"d":"KIT PINCEL LINER  DOBLE FUNCION","i":581,"k":"KIT PINCEL LINER DOBLE","l":"img_581","p":"$15.600,00","u":19,"v":15600,"z":10},{"c":14,"d":"KIT PINCEL LINER *3 ECO","i":619,"k":"PNL 0017","l":"img_619","p":"$7.000,00","u":21,"v":7000,"z":10},{"c":14,"d":"KIT PINCEL REDONDO PEQUEÑO","i":582,"k":"KIT PINCEL REDONDO PQ","l":"img_582","p":"$9.000,00","u":19,"v":9000,"z":10},{"c":14,"d":"KIT PINCEL × 7","i":340,"k":"KIT PINCEL SURTIDO","l":"img_340","p":"$22.000,00","u":21,"v":22000,"z":10},{"c":14,"d":"LIMPIA PINCEL OSO DOBLE FUNCION","i":592,"k":"LIMPIA PINCEL SILICONA","l":"img_592","p":"$7.500,00","u":19,"v":7500,"z":10},{"c":2,"d":"MASA LIVIANA BLANCA 330GR","i":541,"k":"72897454","l":"img_541","p":"$7.800,00","u":19,"v":7800,"z":10},{"c":2,"d":"PORCELANA 250GR  PIEL CLARO","i":527,"k":"7708952454669","l":"img_527","p":"$4.800,00","u":19,"v":4800,"z":10},{"c":2,"d":"PORCELANA 250GR  ROSA CLARO","i":539,"k":"7708952454669_ ROSA","l":"img_539","p":"$4.800,00","u":19,"v":4800,"z":10},{"c":2,"d":"PORCELANA 250GR AMARILLO CLARO","i":532,"k":"7708952454669 AMC","l":"img_532","p":"$4.800,00","u":19,"v":4800,"z":10},{"c":2,"d":"PORCELANA 250GR AMARILLO FLUOR","i":537,"k":"7708952454669 AMFL","l":"img_537","p":"$4.800,00","u":19,"v":4800,"z":10},{"c":2,"d":"PORCELANA 250GR AMARILLO OSCURO","i":535,"k":"7708952454669 AMR","l":"img_535","p":"$4.800,00","u":19,"v":4800,"z":10},{"c":2,"d":"PORCELANA 250GR ANARANJADO","i":538,"k":"7708952454669 NJ","l":"img_538","p":"$4.800,00","u":19,"v":4800,"z":10},{"c":2,"d":"PORCELANA 250GR AZUL","i":525,"k":"7708952454669 A","l":"img_525","p":"$4.800,00","u":19,"v":4800,"z":10},{"c":2,"d":"PORCELANA 250GR CAFE CLARO","i":529,"k":"7708952454669 CF","l":"img_529","p":"$4.800,00","u":19,"v":4800,"z":10},{"c":2,"d":"PORCELANA 250GR ESMERALDA","i":528,"k":"7708952454669 ES","l":"img_528","p":"$4.800,00","u":19,"v":4800,"z":10},{"c":2,"d":"PORCELANA 250GR FUCSIA FLUOR","i":531,"k":"7708952454669 FL","l":"img_531","p":"$4.800,00","u":19,"v":4800,"z":10},{"c":2,"d":"PORCELANA 250GR MORADO","i":534,"k":"7708952454669 MOR","l":"img_534","p":"$4.800,00","u":19,"v":4800,"z":10},{"c":2,"d":"PORCELANA 250GR NARANJA FLUO","i":530,"k":"7708952454669 NF","l":"img_530","p":"$4.800,00","u":19,"v":4800,"z":10},{"c":2,"d":"PORCELANA 250GR ROJO","i":526,"k":"7708952454669 R","l":"img_526","p":"$4.800,00","u":19,"v":4800,"z":10},{"c":2,"d":"PORCELANA 250GR VERDE CLARO","i":536,"k":"7708952454669 VC","l":"img_536","p":"$4.800,00","u":19,"v":4800,"z":10},{"c":2,"d":"PORCELANA 250GR VERDE OSCURO","i":533,"k":"7708952454669 VO","l":"img_533","p":"$4.800,00","u":19,"v":4800,"z":10},{"c":2,"d":"PORCELANA 500GR CAFE CLARO","i":543,"k":"7708952454676LB CF","l":"img_543","p":"$9.000,00","u":19,"v":9000,"z":10},{"c":2,"d":"PORCELANA 500GR NEGRO","i":546,"k":"7708952454676LB NG","l":"img_546","p":"$9.000,00","u":19,"v":9000,"z":10},{"c":2,"d":"PORCELANA 500GR PIEL CL","i":542,"k":"7708952454669 LB P","l":"img_542","p":"$9.000,00","u":19,"v":9000,"z":10},{"c":2,"d":"PORCELANA 500GR ROJO","i":545,"k":"7708952454676LB RJ","l":"img_545","p":"$9.000,00","u":19,"v":9000,"z":10},{"c":2,"d":"PORCELANA 500GR TITANEO","i":544,"k":"7708952454607","l":"img_544","p":"$9.000,00","u":19,"v":9000,"z":10},{"c":2,"d":"PORCELANA 500GR VERDE CLARO","i":548,"k":"7708952454676LB VC","l":"img_548","p":"$9.000,00","u":19,"v":9000,"z":10},{"c":2,"d":"PORCELANA 500GR VERDE OSCURO","i":547,"k":"7708952454676LB VO","l":"img_547","p":"$9.000,00","u":19,"v":9000,"z":10},{"c":2,"d":"PORCELANA FLEXIBLE 500GR","i":540,"k":"7708952454621","l":"img_540","p":"$10.800,00","u":19,"v":10800,"z":10},{"c":0,"d":"KIT PINZAS HERRAMIENTAS BISUTERIA","i":612,"k":"HRR006","l":"img_612","p":"$55.000,00","u":21,"v":55000,"z":10}],"ctg":[{"i":0,"n":"Todos"},{"i":18,"n":"HERRAMIENTAS"},{"i":17,"n":"MATERIALES"},{"i":15,"n":"MDF"},{"i":7,"n":"MOLDE ANIMALES"},{"i":10,"n":"MOLDE APLIQUES"},{"i":11,"n":"MOLDE BABY SHOWER Y RECORDATORIOS"},{"i":12,"n":"MOLDE CABELLOS"},{"i":8,"n":"MOLDE FLORES Y PLANTAS"},{"i":13,"n":"MOLDE MUÑECOS GRANDES"},{"i":4,"n":"MOLDES DULCES\/GALLETAS"},{"i":9,"n":"MOLDES MARCOS Y OTROS"},{"i":5,"n":"MOLDES MUÑECOS"},{"i":3,"n":"MOLDES NAVIDEÑOS"},{"i":20,"n":"MOLDES RESINA"},{"i":6,"n":"MOLDES VARIOS"},{"i":21,"n":"OTROS"},{"i":14,"n":"PINCELES"},{"i":2,"n":"PORCELANICROM"}],"und":[{"i":0,"n":"Sin Unidad"},{"i":2,"n":"KILOGRAMO"},{"i":19,"n":"UNIDAD "},{"i":21,"n":"PAQUETE"},{"i":22,"n":"PAR"}],"ngc":"CANDY LOVE MOLDES ","tel2":"573023687886","cor2":"ventascandylove@gmail.com","dir2":"Nit: 1095790087-5\nCiudad: Bucaramanga \/Santander","alf":"Alfabeto","myp":"Mayor Precio","mnp":"Menor Precio","ctgs":"Categoría","orp":"Ordenar Por","bsc":"Buscar","crt":true,"nam":"Nombre","sct":"Comprar Ahora","ernw":"Error al conectarse al servidor, compruebe su conexión a internet e intente nuevamente.","img":true,"uni":true,"cla":true,"wha":true,"clo":"Cerrar","nxt":"Siguiente","prv":"Anterior","sin":"Sin Información","clt":"w3-pink","tmp":1726085090350,"lg":"logo"} /*#d4t4#*/;
+		</script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
